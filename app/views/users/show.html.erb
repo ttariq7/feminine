@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <bar style="position:fixed;left:0px;top:0px;width:100%;height:55px;"></bar>
-<bar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;"></bar>
+<bar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
+	<%= link_to "Sign out", signout_path, method: "delete" %>
+</bar>
 <div style="margin: 0px auto;width:960px;">
 <bar style="position:fixed;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:80px;top:0px;width:80px;height:55px;"></bar>
@@ -17,6 +19,8 @@
 </div>
 <div style="margin: 0px auto;width:960px;">
 </div>
+
+
 
 
 
