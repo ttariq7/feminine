@@ -2,7 +2,10 @@
 
 <bar style="position:fixed;left:0px;top:0px;width:100%;height:55px;"></bar>
 <bar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
+		<% if signed_in? %>
 	<%= link_to "Sign out", signout_path, method: "delete" %>
+	<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+		<% end %>
 </bar>
 <div style="margin: 0px auto;width:960px;">
 <bar style="position:fixed;top:0px;width:80px;height:55px;"></bar>

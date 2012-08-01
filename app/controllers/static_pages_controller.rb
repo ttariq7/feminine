@@ -4,4 +4,8 @@ class StaticPagesController < ApplicationController
 
   def help
   end
+  
+  def new
+     @user = User.new
+  end
 end
