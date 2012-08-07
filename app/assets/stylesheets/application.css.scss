@@ -19,3 +19,15 @@ bar {
 	);
 	border: 1px solid #E21E79;
 }
+
+body {
+  padding-top: 60px;
+overflow-y: scroll;
+}
+
+.item {
+  background:white;
+  width: 220px;
+  margin: 10px;
+  float: left;
+}

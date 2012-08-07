@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:edit, :update]
+  before_filter :signed_in_user, 
+                only: [:index, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_user,   only: [:edit, :update]  
-  # GET /users
-  # GET /users.json
+
+
   def index
     @users = User.all
 
@@ -12,15 +13,16 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1
-  # GET /users/1.json
+
   def show
     @user = User.find(params[:id])
-
+    @microposts = @user.microposts
+    @comment = Comment.new
+    @micropost = Micropost.find(params[:id])
+    @comments = @micropost.comments
   end
 
-  # GET /users/new
-  # GET /users/new.json
+
   def new
     @user = User.new
 
@@ -30,13 +32,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -45,11 +44,8 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
-
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
@@ -60,8 +56,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -70,6 +64,20 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+  
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follow'
   end
   
   private

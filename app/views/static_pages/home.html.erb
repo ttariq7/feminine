@@ -6,7 +6,11 @@
 <bar style="position:fixed;margin-left:160px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:240px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"></bar>
-<bar style="position:fixed;margin-left:400px;top:0px;width:160px;height:55px;"></bar>
+<bar style="position:fixed;margin-left:400px;top:0px;width:160px;height:55px;">
+	<section>
+	  <%= render 'shared/stats' if signed_in? %>
+	</section>	
+</bar>
 <bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:640px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:720px;top:0px;width:80px;height:55px;"></bar>
@@ -16,13 +20,36 @@
 
 
 <div style="margin: 0px auto;width:960px;">
-<bar data-toggle="modal" href="#myModal" style="position:fixed;bottom:5px;width:80px;height:30px;">
+<bar data-toggle="modal" href="#entermodal" style="position:fixed;bottom:5px;margin-left:440px;width:80px;height:30px;">
 Enter
 </bar>
 </div>
 
-<div class="modal hide" id="myModal">
-  <div class="modal-header">
+<% if signed_in? %>
+<div style="margin: 0 auto;"id="container">
+  <h3>Micropost Feed</h3>
+  <%= render 'shared/feed' %>
+</div>
+<% end %>
+
+<% @microposts.each do |micropost| %>
+
+<% end %>
+
+
+
+
+
+
+<% if signed_in? %>
+<section>
+	<div class="modal hide" id="entermodal">
+  <%= render 'shared/micropost_form' %>
+	</div>
+</section>
+<% else %>
+<div class="modal hide" id="entermodal">
+  <div class="">
     <button type="button" class="close" data-dismiss="modal">×</button>
     <ul class="nav nav-tabs" style="margin-bottom:-10px;margin-top:-10px;margin-left:10px;background:transparent;">
 	  <li class="active"><a href="#home" data-toggle="tab">Log In</a></li>
@@ -30,7 +57,7 @@ Enter
 
 	</ul>
   </div>
-  <div class="modal-body">
+  <div class="">
 
 	<div class="tab-content">
 	  <div class="tab-pane active" id="home">
@@ -90,11 +117,22 @@ Enter
 	</div>
 	
   </div>
-  <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
-  </div>
 </div>
 
 
+
+<% end %>
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#container').masonry({
+    // options
+	isFitWidth: true,
+    itemSelector : '.item',
+    columnWidth : 240
+  });
+});
+</script>
 
