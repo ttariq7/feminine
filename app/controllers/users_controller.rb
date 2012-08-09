@@ -18,8 +18,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @microposts = @user.microposts
     @comment = Comment.new
-    @micropost = Micropost.find(params[:id])
-    @comments = @micropost.comments
+
   end
 
 
