@@ -13,6 +13,11 @@ class CommentsController < ApplicationController
       end
     end
   
+    def show
+      @micropost = Micropost.find(params[:id])
+      @comment = Micropost.comment.find(params[:id])
+    end
+  
   
   def destroy
     @comment = current_user.comments.find(params[:id])

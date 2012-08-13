@@ -10,6 +10,7 @@ gem "heroku"
 gem 'thin'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'bootstrap-sass'
+gem 'carrierwave'
 
 
 
