@@ -1,3 +1,8 @@
+//= require bootstrap
+
+@import "bootstrap";
+
+
 bar {
 	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
@@ -13,4 +18,16 @@ bar {
 		color-stop(1, rgb(226,30,122))
 	);
 	border: 1px solid #E21E79;
+}
+
+body {
+  padding-top: 60px;
+overflow-y: scroll;
+}
+
+.item {
+  background:white;
+  width: 220px;
+  margin: 10px;
+  float: left;
 }
