@@ -1,7 +1,5 @@
 //= require bootstrap
 
-@import "bootstrap";
-
 
 bar {
 	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
