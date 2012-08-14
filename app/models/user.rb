@@ -1,5 +1,5 @@
 
-require 'app/uploaders/image_uploader'
+
 
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :image
