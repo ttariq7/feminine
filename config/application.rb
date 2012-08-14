@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+config.autoload_paths += "#{Rails.root}/app/uploaders"
+
 require 'rails/all'
 
 if defined?(Bundler)
