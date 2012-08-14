@@ -1,3 +1,6 @@
+
+require 'app/uploaders/image_uploader'
+
 class Micropost < ActiveRecord::Base
   attr_accessible :content, :image
   belongs_to :user
