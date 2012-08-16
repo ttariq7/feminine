@@ -5,7 +5,7 @@ CarrierWave.configure do |config|
     :aws_secret_access_key  => 'Eqg9hK1n1dHtG69iSTxNj/PJW/OU4Pu/qNuUbCYM',       # required
 
   }
-  config.fog_directory  = 'femynyn_images'                     # required
+  config.fog_directory  = 'femynyn.images'                     # required
 
   config.cache_dir = "#{Rails.root}/tmp/uploads"
 
