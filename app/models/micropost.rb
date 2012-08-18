@@ -1,4 +1,6 @@
 class Micropost < ActiveRecord::Base
+  acts_as_voteable
+  
   attr_accessible :content, :image
   belongs_to :user
   has_many :comments, dependent: :destroy 

@@ -79,6 +79,14 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
   
+  def vote_for_micropost
+      @micropost = Micropost.find(params[:id])
+      current_user.vote_for(@micropost)
+      respond_to do |format|
+        format.js
+      end
+  end
+  
   private
 
     def signed_in_user

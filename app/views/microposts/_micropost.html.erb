@@ -1,10 +1,12 @@
 
 <div class="item">
 
-  <span><%= image_tag micropost.image_url.to_s %></span>
+  <span><%= image_tag micropost.image_url.to_s if micropost.image? %></span>
   <span class="content"><%= micropost.content %></span>
+  <%=  link_to 'UP', vote_up_micropost_path(micropost.id), class: "btn" %>
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    Has <%= micropost.votes_for %> Votes
   </span>
   <% if current_user?(micropost.user) %>
     <%= link_to "delete", micropost, method: :delete,
@@ -12,7 +14,8 @@
                                      title: micropost.content %>
   <% end %>
 
-	<div>	
+	<div>
+	
 	<%= form_for([micropost, @comment]) do |f| %>
 	<%= f.text_area :body, :placeholder => "Write a Comment..." %>
 	<div><%= f.submit "Comment" %></div>

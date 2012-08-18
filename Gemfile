@@ -12,6 +12,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem "fog"
+gem 'thumbs_up'
 
 
 

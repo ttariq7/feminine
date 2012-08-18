@@ -8,7 +8,10 @@ Feminine::Application.routes.draw do
   
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy] do
-        resources :comments
+      resources :comments
+      member do
+        get :vote_up
+      end
   end
   resources :relationships, only: [:create, :destroy]
 

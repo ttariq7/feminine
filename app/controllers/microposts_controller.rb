@@ -27,6 +27,17 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     redirect_to root_path
   end
+  
+  
+  def vote_up
+    begin
+      current_user.vote_for(@micropost = Micropost.find(params[:id]))
+      redirect_to current_user
+      
+    rescue ActiveRecord::RecordInvalid
+      redirect_to current_user
+    end
+  end
 
   private
 

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  acts_as_voter
+  
   attr_accessible :name, :email, :password, :password_confirmation, :image
   has_secure_password
   has_many :microposts, dependent: :destroy
