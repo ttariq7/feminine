@@ -2,7 +2,7 @@
     <span class="user">
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
-	<span><%= image_tag feed_item.image_url.to_s %></span>
+	<span><%= image_tag feed_item.image_url.to_s if feed_item.image? %></span>
     <span class="content"><%= feed_item.content %></span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
@@ -12,6 +12,10 @@
                                      data: { confirm: "You sure?" },
                                      title: feed_item.content %>
   <% end %>
+
+
+  <%=  link_to 'UP', vote_up_micropost_path(feed_item.id), class: "btn" %>
+
 
 
 

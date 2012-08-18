@@ -19,7 +19,9 @@ Feminine::Application.routes.draw do
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
+  match '/help',  to: 'static_pages#help'
   match '/signout', to: 'sessions#destroy', via: :delete
+  match 'tagged' => 'microposts#tagged', :as => 'tagged'
 
   get "static_pages/help"
   

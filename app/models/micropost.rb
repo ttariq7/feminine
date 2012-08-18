@@ -1,7 +1,8 @@
 class Micropost < ActiveRecord::Base
   acts_as_voteable
+  acts_as_taggable_on :tags
   
-  attr_accessible :content, :image
+  attr_accessible :content, :image, :tag_list, :tags
   belongs_to :user
   has_many :comments, dependent: :destroy 
   accepts_nested_attributes_for :comments

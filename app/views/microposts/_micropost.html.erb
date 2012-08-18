@@ -14,6 +14,11 @@
                                      title: micropost.content %>
   <% end %>
 
+<% micropost.tags.any? %>
+        <% micropost.tags.each do |tag| %>
+        <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+<% end %>
+
 	<div>
 	
 	<%= form_for([micropost, @comment]) do |f| %>

@@ -5,12 +5,10 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed
     end
     @microposts = Micropost.all
-
-
-
   end
 
   def help
+    @comment = Comment.new
   end
   
   def new

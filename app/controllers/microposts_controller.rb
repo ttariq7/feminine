@@ -13,7 +13,10 @@ class MicropostsController < ApplicationController
     end
   end
 
+
+
   def show
+    
      @micropost = Micropost.find(params[:id])
   +  @comments = @micropost.comments.all
 
@@ -37,6 +40,14 @@ class MicropostsController < ApplicationController
     rescue ActiveRecord::RecordInvalid
       redirect_to current_user
     end
+  end
+  
+  def tagged
+        if params[:tag].present? 
+        @microposts = Micropost.tagged_with(params[:tag])
+      else 
+        @microposts = Micropost.micropostall
+      end  
   end
 
   private
