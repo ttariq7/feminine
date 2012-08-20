@@ -1,23 +1,28 @@
 <div id="<%= feed_item.id %>" class="item">
-    <span class="user">
-      <%= link_to feed_item.user.name, feed_item.user %>
-    </span>
-	<span><%= image_tag feed_item.image_url.to_s if feed_item.image? %></span>
-    <span class="content"><%= feed_item.content %></span>
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
-    </span>
-  <% if current_user?(feed_item.user) %>
-    <%= link_to "delete", feed_item, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: feed_item.content %>
-  <% end %>
 
 
-  <%=  link_to 'UP', vote_up_micropost_path(feed_item.id), class: "btn" %>
+	  <span ><%= image_tag feed_item.image_url.to_s if feed_item.image? %></span>
+	  <% if feed_item.content? %>
+	  <div class="content"><%= feed_item.content %></div>
+	  <% end %>
 
 
 
+	  <bar style="position:absolute;width:50px;height:28px;"></bar>
 
-</div>
+	  <span style="position:absolute;">
+	  <%= link_to feed_item.user do %>
+	  <bar style="position:absolute;margin-left:50px;width:108px;height:28px;text-align:center;"><h3><%= feed_item.user.name %></h3></bar>
+	  <% end %>
+	  </span>	
+
+	  <span style="position:absolute;">
+	  <%=  link_to vote_up_micropost_path(feed_item.id) do %> 
+	  <bar style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= feed_item.votes_for %></h3></bar>	
+	  <% end %>
+	  </span>
+
+
+	</div>
+
 
