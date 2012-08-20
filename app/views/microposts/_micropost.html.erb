@@ -1,39 +1,28 @@
 
-<div class="item">
+<div class="item" >
 
-  <span><%= image_tag micropost.image_url.to_s if micropost.image? %></span>
-  <span class="content"><%= micropost.content %></span>
-  <%=  link_to 'UP', vote_up_micropost_path(micropost.id), class: "btn" %>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    Has <%= micropost.votes_for %> Votes
-  </span>
-  <% if current_user?(micropost.user) %>
-    <%= link_to "delete", micropost, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: micropost.content %>
+
+
+  <span ><%= image_tag micropost.image_url.to_s if micropost.image? %></span>
+  <% if micropost.content? %>
+  <div class="content"><%= micropost.content %></div>
   <% end %>
 
-<% micropost.tags.any? %>
-        <% micropost.tags.each do |tag| %>
-        <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-<% end %>
 
-	<div>
-	
-	<%= form_for([micropost, @comment]) do |f| %>
-	<%= f.text_area :body, :placeholder => "Write a Comment..." %>
-	<div><%= f.submit "Comment" %></div>
-	<% end %>
-	<% micropost.comments.each do |comment| %>
-	<%= comment.body %>
-	<%= comment.user.name %>
-	
-	
+  
+  <bar style="position:absolute;width:50px;height:28px;"></bar>
 
+  <span style="position:absolute;">
+  <%= link_to micropost.user do %>
+  <bar style="position:absolute;margin-left:50px;width:108px;height:28px;text-align:center;"><h3><%= micropost.user.name %></h3></bar>
+  <% end %>
+  </span>	
 
-	<% end %>
-	</div>
+  <span style="position:absolute;">
+  <%=  link_to vote_up_micropost_path(micropost.id) do %> 
+  <bar style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= micropost.votes_for %></h3></bar>	
+  <% end %>
+  </span>
 
 
 </div>

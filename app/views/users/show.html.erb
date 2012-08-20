@@ -31,12 +31,9 @@
 
 
 
-<div class="span8">
+
   <%= render 'follow_form' if signed_in? %>
   <% if @user.microposts.any? %>
-    <h3>Microposts (<%= @user.microposts.count %>)</h3>  
-
-</div>
 
 <div style="margin: 0px auto;width:960px;"id="container">
 
@@ -54,7 +51,7 @@ $(function(){
   $('#container').masonry({
     // options
     itemSelector : '.item',
-    columnWidth : 240
+    columnWidth : 240;
   });
 });
 </script>

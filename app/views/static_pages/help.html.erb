@@ -1,2 +1,12 @@
 
 <span><%= render Micropost.tagged_with(["health", "beauty"], :any => true)  %></span>
+
+<span><%= render Micropost.where(kyahai: "3")  %></span>
+
+
+<% form_tag microposts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>

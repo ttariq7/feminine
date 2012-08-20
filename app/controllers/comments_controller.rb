@@ -1,18 +1,29 @@
 class CommentsController < ApplicationController
 
-
+  def index
+       @comments = Comment.all
+       respond_to do |format|
+         format.html # index.html.erb
+         format.rss
+       end
+     end
+     
     def create
       @micropost = Micropost.find(params[:micropost_id])
       @comment = Comment.new(params[:comment])
       @comment.micropost = @micropost
       @comment.user = current_user
       if @comment.save
-        redirect_to current_user
-      else
-        render 'static_pages/help'
-      end
+           respond_to do |format|
+                format.html
+                format.js
+           end
+         end
     end
   
+
+      
+      
     def show
       @micropost = Micropost.find(params[:id])
       @comment = Micropost.comment.find(params[:id])
@@ -25,7 +36,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     
     respond_to do |format|
-      format.html { redirect_to @current_user }
+      format.html
     end
   end
 end
