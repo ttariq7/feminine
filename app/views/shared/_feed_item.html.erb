@@ -8,17 +8,17 @@
 
 
 
-	  <bar style="position:absolute;width:50px;height:28px;"></bar>
+	  <barr style="position:absolute;width:50px;height:28px;"></barr>
 
 	  <span style="position:absolute;">
 	  <%= link_to feed_item.user do %>
-	  <bar style="position:absolute;margin-left:50px;width:108px;height:28px;text-align:center;"><h3><%= feed_item.user.name %></h3></bar>
+	  <barr style="position:absolute;margin-left:50px;width:108px;height:28px;text-align:center;"><h3><%= feed_item.user.name %></h3></barr>
 	  <% end %>
 	  </span>	
 
 	  <span style="position:absolute;">
 	  <%=  link_to vote_up_micropost_path(feed_item.id) do %> 
-	  <bar style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= feed_item.votes_for %></h3></bar>	
+	  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= feed_item.votes_for %></h3></barr>	
 	  <% end %>
 	  </span>
 

@@ -29,7 +29,20 @@
 <div style="margin: 0px auto;width:960px;">
 </div>
 
+<div style="margin: 0px auto;width:960px;">
+<bar data-toggle="modal" href="#entermodal" style="border:0px;position:fixed;bottom:0px;margin-left:400px;width:160px;height:41px;">
+<h2>F E M Y N Y N<h2>
+</bar>
 
+</div>
+<% @micropost  = current_user.microposts.build %>
+<% if signed_in? %>
+<section>
+	<div class="modal hide" id="entermodal">
+  <%= render 'shared/micropost_form' %>
+	</div>
+</section>
+<% end %>
 
 
   <%= render 'follow_form' if signed_in? %>

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
 
   def index
+    
     @users = User.all
 
     respond_to do |format|
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
 
 
   def show
+    
     @user = User.find(params[:id])
     @microposts = @user.microposts
     @comment = Comment.new
@@ -23,6 +25,7 @@ class UsersController < ApplicationController
 
 
   def new
+    
     @user = User.new
 
     respond_to do |format|
@@ -36,6 +39,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    
     @user = User.new(params[:user])
     if @user.save
       sign_in @user

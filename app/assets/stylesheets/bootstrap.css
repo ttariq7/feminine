@@ -65,6 +65,24 @@ bar {
 	border: 1px solid #620631;
 }
 
+barr {
+	
+	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.22, rgb(89,5,44)),
+		color-stop(1, rgb(226,30,122))
+	);
+	border: 1px solid #620631;
+}
+
 bar:hover {
 	background:#59052C;
 }
@@ -438,6 +456,7 @@ h6 small {
 h1 {
   font-size: 30px;
   line-height: 36px;
+  color:#CC337A;
 }
 h1 small {
   font-size: 18px;
@@ -445,6 +464,7 @@ h1 small {
 h2 {
   font-size: 24px;
   line-height: 36px;
+  color:#CC337A;
 }
 h2 small {
   font-size: 18px;
@@ -452,6 +472,8 @@ h2 small {
 h3 {
   font-size: 14px;
   line-height: 27px;
+  font-weight:bold;
+  color:#CC337A;
 }
 h3 small {
   font-size: 14px;
@@ -468,7 +490,8 @@ h4 small {
   font-size: 12px;
 }
 h5 {
-  font-size: 12px;
+  font-size: 10px;
+  color:#CC337A;
 }
 h6 {
   font-size: 11px;
