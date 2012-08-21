@@ -47,7 +47,7 @@ a:active {
 
 
 bar {
-	
+	cursor: pointer;cursor: hand;
 	z-index:100;
 	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
@@ -66,7 +66,7 @@ bar {
 }
 
 barr {
-	
+	cursor: pointer;cursor: hand;
 	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
 	background-image: -moz-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
@@ -84,11 +84,13 @@ barr {
 }
 
 barr:hover {
-	
+	cursor: pointer;cursor: hand;	
 background:#59052C;
+cursor: hand;
 }
 
 bar1 {
+ 	cursor: pointer;cursor: hand;
 	background:#953361;
 	z-index:99;
 
@@ -96,11 +98,13 @@ bar1 {
 
 bar1:hover {
 	background:#76284D;
+	cursor: pointer;cursor: hand;
 
 }
 
 bar:hover {
 	background:#59052C;
+	cursor: hand;
 }
 
 body {
@@ -239,7 +243,7 @@ a {
 }
 a:hover {
   color: #ffffff;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .row {
   margin-left: -20px;
