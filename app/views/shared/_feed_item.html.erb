@@ -1,28 +1,28 @@
 <div id="<%= feed_item.id %>" class="item">
 
 
-	  <span ><%= image_tag feed_item.image_url.to_s if feed_item.image? %></span>
-	  <% if feed_item.content? %>
-	  <div class="content"><%= feed_item.content %></div>
-	  <% end %>
+  <span ><%= image_tag feed_item.image_url.to_s if feed_item.image? %></span>
+  <% if feed_item.content? %>
+  <div class="content"><%= feed_item.content %></div>
+  <% end %>
 
 
 
-	  <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>
+  <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>
 
-	  <span style="position:absolute;">
-	  <%= link_to feed_item.user do %>
-	  <barr style="position:absolute;margin-left:50px;width:108px;height:28px;text-align:center;"><h3><%= feed_item.user.name %></h3></barr>
-	  <% end %>
-	  </span>	
+  <span style="position:absolute;">
+  <%= link_to feed_item.user do %>
+  <barr style="position:absolute;margin-left:50px;width:108px;height:28px;text-align:center;"><h3><%= feed_item.user.name %></h3></barr>
+  <% end %>
+  </span>	
 
-	  <span style="position:absolute;">
-	  <%=  link_to vote_up_micropost_path(feed_item.id) do %> 
-	  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= feed_item.votes_for %></h3></barr>	
-	  <% end %>
-	  </span>
+  <span style="position:absolute;">
+  <%=  link_to vote_up_micropost_path(feed_item.id) do %> 
+  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= feed_item.votes_for %></h3></barr>	
+  <% end %>
+  </span>
 
 
-	</div>
+</div>
 
 

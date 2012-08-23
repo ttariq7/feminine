@@ -46,8 +46,11 @@ a:active {
 }
 
 aside {
-	z-index:100;
+	z-index:50;
+	position:fixed;
+	top:85px;
 	right:0px;
+	height:100%;
 	padding-top:5px;
 	max-width:240px;
 }
@@ -128,6 +131,7 @@ overflow-y: scroll;
 }
 
 .item {
+
   background:black;
   width: 210px;
   margin: 10px;
@@ -138,6 +142,7 @@ overflow-y: scroll;
 }
 
 .content {
+
 	background:white;
 	color:black;
 	font-size:18px;
