@@ -13,8 +13,10 @@
 <bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:400px;top:0px;width:160px;height:55px;z-index:100;">
 	<section>
+	  <% if signed_in? %>
 	  <%= render 'shared/stats' %>
 	  <%= image_tag @user.image.to_s if @user.image? %>
+	  <% end %>
 	</section>
 </bar>
 <bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"></bar>
@@ -26,7 +28,7 @@
 <div style="margin: 0px auto;width:960px;">
 <bar1 style="position:fixed;margin-left:322px;top:55px;width:106px;height:40px;"></bar1>
 <%= link_to root_path do %><bar1 style="position:fixed;margin-left:428px;top:55px;width:108px;height:40px;"></bar1><% end %>
-<%= link_to current_user do %><bar1 style="position:fixed;margin-left:536px;top:55px;width:106px;height:40px;"></bar1><% end %>
+<% if signed_in? %><%= link_to current_user do %><% end %><bar1 style="position:fixed;margin-left:536px;top:55px;width:106px;height:40px;"></bar1><% end %>
 
 <bar1 style="right:160px;position:fixed;margin-left:720px;top:55px;width:80px;height:40px;"></bar1>
 <bar1 style="right:80px;position:fixed;margin-left:800px;top:55px;width:80px;height:40px;"></bar1>
