@@ -45,6 +45,21 @@ a:active {
   outline: 0;
 }
 
+aside {
+	z-index:100;
+	right:0px;
+	padding-top:5px;
+	max-width:240px;
+}
+
+square {
+	background:#953361;
+	border: 1px solid #620631;
+}
+square:hover {
+	background:#620631;
+}
+
 
 bar {
 	cursor: pointer;cursor: hand;

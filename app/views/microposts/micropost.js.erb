@@ -1,0 +1,12 @@
+<script type="text/javascript">
+$("#micropost").dialog({
+  autoOpen: true,
+  height: 600,
+  width: 600,
+  modal: true,
+  title: 'Micropost',
+  open: function() {
+    $("#micropost").html("<%= escape_javascript(render('microposts/post')) %>")
+  },
+});
+</script>
