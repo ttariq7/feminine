@@ -17,6 +17,98 @@
 
 <%= yield %>
 
+<% @micropost = current_user.microposts.build(params[:micropost]) %>
+<% if signed_in? %>
+<section>
+<div class="modal hide" id="entermodal" style="height:402px;width:402px;">
+		
+<square style="position:absolute;height:200px;width:200px;"></square>		
+<square style="position:absolute;height:200px;width:200px;margin-left:200px;"></square>
+<square style="position:absolute;height:200px;width:200px;margin-top:200px;"></square>
+<square style="position:absolute;height:200px;width:200px;margin-top:200px;margin-left:200px;"></square>		
+		
+  <%= render 'shared/micropost_form' %>
+
+
+</div>
+</section>
+
+
+<% else %>
+<div class="modal hide" id="entermodal">
+  <div class="">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <ul class="nav nav-tabs" style="margin-bottom:-10px;margin-top:-10px;margin-left:10px;background:transparent;">
+	  <li class="active"><a href="#home" data-toggle="tab">Log In</a></li>
+	  <li><a href="#profile" data-toggle="tab">Join</a></li>
+
+	</ul>
+  </div>
+  <div class="">
+
+	<div class="tab-content">
+	  <div class="tab-pane active" id="home">
+	  	<div class="row">
+		    <%= form_for(:session, url: sessions_path) do |f| %>
+
+		      <%= f.label :email %>
+		      <%= f.text_field :email %>
+
+		      <%= f.label :password %>
+		      <%= f.password_field :password %>
+
+		      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+		    <% end %>
+
+		    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+		</div>
+	  </div>
+	  <div class="tab-pane" id="profile">
+		<%= @user = User.new %>
+		
+		<%= form_for(@user) do |f| %>
+		  <% if @user.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+		      <ul>
+		      <% @user.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+
+		  <div class="field">
+		    <%= f.label :name %><br />
+		    <%= f.text_field :name %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :email %><br />
+		    <%= f.text_field :email %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :password %><br />
+		    <%= f.password_field :password %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :password_confirmation %><br />
+		    <%= f.password_field :password_confirmation %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		<% end %>
+		
+	  </div>
+	</div>
+	
+  </div>
+</div>
+
+
+
+<% end %>
 
 
 </body>

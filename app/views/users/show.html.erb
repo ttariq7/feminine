@@ -11,12 +11,12 @@
 <bar style="position:fixed;margin-left:160px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:240px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"></bar>
-<bar style="position:fixed;margin-left:400px;top:0px;width:160px;height:55px;z-index:100;">
+<div style="position:fixed;margin-left:400px;top:0px;width:160px;height:55px;z-index:100;">
 	<section>
 	  <%= render 'shared/stats' %>
 	  <%= image_tag @user.image.to_s if @user.image? %>
 	</section>
-</bar>
+</div>
 <bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:640px;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:720px;top:0px;width:80px;height:55px;"></bar>
@@ -24,8 +24,8 @@
 <bar style="position:fixed;margin-left:880px;top:0px;width:80px;height:55px;"></bar>
 </div>
 <div style="margin: 0px auto;width:960px;">
-<bar1 style="position:fixed;margin-left:322px;top:55px;width:106px;height:40px;"></bar1>
-<%= link_to root_path do %><bar1 style="position:fixed;margin-left:428px;top:55px;width:108px;height:40px;"></bar1><% end %>
+<%= link_to root_path do %><bar1 style="position:fixed;margin-left:322px;top:55px;width:106px;height:40px;"></bar1><% end %>
+<%= link_to '/feed' do %><bar1 style="position:fixed;margin-left:428px;top:55px;width:108px;height:40px;"></bar1><% end %>
 <%= link_to current_user do %><bar1 style="position:fixed;margin-left:536px;top:55px;width:106px;height:40px;"></bar1><% end %>
 
 <bar1 style="right:160px;position:fixed;margin-left:720px;top:55px;width:80px;height:40px;"></bar1>
@@ -38,7 +38,7 @@
 <h2 style="text-align:center;">FEMYNYN<h2>
 </bar>
 </div>
-<% @micropost  = current_user.microposts.build %>
+<% @micropost  = current_user.microposts.build if signed_in? %>
 <% if signed_in? %>
 
 	<div class="modal hide" id="entermodal">
@@ -47,11 +47,24 @@
 
 <% end %>
 
+<bar1 style="z-index:50;position:absolute;right:240px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
+</bar1>
+<bar1 style="z-index:50;position:absolute;right:420px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
+</bar1>
+<bar1 style="z-index:50;position:absolute;right:600px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
+</bar1>
+<bar1 style="z-index:50;position:absolute;right:780px;margin-top:20px;margin-left:10px;width:180px;height:200px;">
+</bar1>
+<bar1 style="z-index:50;position:absolute;right:785px;margin-top:225px;margin-left:10px;width:175px;height:195px;">
+	<%= render 'follow_form' if signed_in? %>
+</bar1>
 
-  <%= render 'follow_form' if signed_in? %>
+
+
+
   <% if @user.microposts.any? %>
 
-<div style="margin-right:240px;left:1%;display:block;" id="container">
+<div style="margin-top:450px;margin-right:240px;left:1%;display:block;" id="container">
   <%= render @microposts %>
 </div>
 

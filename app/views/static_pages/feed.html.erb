@@ -26,9 +26,15 @@
 <bar style="position:fixed;margin-left:880px;top:0px;width:80px;height:55px;"></bar>
 </div>
 <div style="margin: 0px auto;width:960px;">
-<%= link_to root_path do %><bar1 style="position:fixed;margin-left:322px;top:55px;width:106px;height:40px;"></bar1><% end %>
-<%= link_to '/feed' do %><bar1 style="position:fixed;margin-left:428px;top:55px;width:108px;height:40px;"></bar1><% end %>
-<%= link_to current_user do %><bar1 style="position:fixed;margin-left:536px;top:55px;width:106px;height:40px;"></bar1><% end %>
+<%= link_to root_path do %><bar1 style="position:fixed;margin-left:322px;top:55px;width:106px;height:40px;">
+
+</bar1><% end %>
+<%= link_to '/feed' do %><bar1 style="position:fixed;margin-left:428px;top:55px;width:108px;height:40px;">
+
+</bar1><% end %>
+<%= link_to current_user do %><bar1 style="position:fixed;margin-left:536px;top:55px;width:106px;height:40px;">
+	<i class="icon-user" style="z-index:300;">User</i>
+</bar1><% end %>
 
 <bar1 style="right:160px;position:fixed;margin-left:720px;top:55px;width:80px;height:40px;"></bar1>
 <bar1 style="right:80px;position:fixed;margin-left:800px;top:55px;width:80px;height:40px;"></bar1>
@@ -43,19 +49,15 @@
 
 
 	
+<% if signed_in? %>
 <div id="container" style="margin-right:240px;margin-left:1%;display:block;">
-   <%= render Micropost.all  %>
+   <%= render 'shared/feed' %>
 </div>
 
 <aside style="position:absolute;">
-   <%= render Micropost.tagged_with(["health", "beauty"], :any => true)  %>
+   
 </aside>
-
-
-
-
-
-
+<% end %>
 
 
 

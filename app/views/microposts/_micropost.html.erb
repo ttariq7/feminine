@@ -17,8 +17,12 @@
   </span>	
 
   <span style="position:absolute;">
+  <% if signed_in? %>
   <%=  link_to vote_up_micropost_path(micropost.id) do %> 
   <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= micropost.votes_for %></h3></barr>	
+  <% end %>
+  <% else %>
+  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= micropost.votes_for %></h3></barr>
   <% end %>
   </span>
 

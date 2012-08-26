@@ -16,7 +16,8 @@ Feminine::Application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   root to: 'static_pages#home'
-
+  
+  match '/feed',  to: 'static_pages#feed'
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/help',  to: 'static_pages#help'
