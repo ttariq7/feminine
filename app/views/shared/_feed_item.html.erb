@@ -1,11 +1,11 @@
 <div id="<%= feed_item.id %>" class="item">
 
-
+<div data-toggle="modal" href="#<%= feed_item.id %>" style="cursor:pointer;cursor:hand;" >
   <span ><%= image_tag feed_item.image_url.to_s if feed_item.image? %></span>
   <% if feed_item.content? %>
   <div class="content"><%= feed_item.content %></div>
   <% end %>
-
+</div>
 
 
   <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>
@@ -22,6 +22,9 @@
   <% end %>
   </span>
 
+<div class="modal hide" id="<%= feed_item.id %>" >
+	  <div class="content"><%= feed_item.content %></div>
+</div>
 
 </div>
 

@@ -2442,6 +2442,7 @@ button.close {
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
+
 .btn-warning:hover,
 .btn-warning:active,
 .btn-warning.active,
@@ -3677,6 +3678,7 @@ input[type="submit"].btn.btn-mini {
   overflow-y: auto;
   max-height: 400px;
   padding: 15px;
+  background-color:#953361;
 }
 .modal-form {
   margin-bottom: 0;

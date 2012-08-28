@@ -1,11 +1,11 @@
 <div class="item" >
 
-
+<div data-toggle="modal" href="#<%= micropost.id %>" style="cursor:pointer;cursor:hand;" >
   <span ><%= image_tag micropost.image_url(:micropost) if micropost.image? %></span>
   <% if micropost.content? %>
   <div class="content"><%= micropost.content %></div>
   <% end %>
-
+</div>
 
 
   <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>
@@ -26,6 +26,9 @@
   <% end %>
   </span>
 
+<div class="modal hide" id="<%= micropost.id %>" >
+	  <div class="content"><%= micropost.content %></div>
+</div>
 
 </div>
 

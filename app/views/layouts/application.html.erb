@@ -12,6 +12,32 @@
 
   <%= csrf_meta_tags %>
 
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    var $secondary = $('#secondary');
+
+    $secondary.infinitescroll({
+        debug           : false,
+        nextSelector    : "div.navigation a:first",
+        loadingImg      : "/js/ajax-loader.gif",
+        navSelector     : "div.navigation",
+        contentSelector : "#secondary",
+        itemSelector    : "div.item"
+        },function(newElements) {
+            Cufon.refresh();
+            setTimeout(function() {
+
+                $secondary.masonry({
+                    appendedContent: $(newElements)
+                });
+
+            }, 1);
+
+    });
+});
+</script>
+
+
 </head>
 <body>
 
@@ -21,12 +47,8 @@
 <% if signed_in? %>
 <% @micropost = current_user.microposts.build(params[:micropost]) %>
 <section>
-<div class="modal hide" id="entermodal" style="height:402px;width:402px;">
-		
-<square style="position:absolute;height:200px;width:200px;"></square>		
-<square style="position:absolute;height:200px;width:200px;margin-left:200px;"></square>
-<square style="position:absolute;height:200px;width:200px;margin-top:200px;"></square>
-<square style="position:absolute;height:200px;width:200px;margin-top:200px;margin-left:200px;"></square>		
+<div class="modal hide" id="entermodal" style="height:402px;width:402px;background-color:#953361;">
+				
 		
   <%= render 'shared/micropost_form' %>
 
