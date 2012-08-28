@@ -2,7 +2,7 @@
 <ar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
 	<% if signed_in? %>
 	<%= link_to "Sign out", signout_path, method: "delete" %>
-	<%= link_to "Settings", edit_user_path(current_user) %>
+	<%= link_to "Directory", users_path, method: "delete" %>
 	<% end %>	
 </ar>
 <div style="margin: 0px auto;width:960px;">
