@@ -17,8 +17,9 @@
 
 <%= yield %>
 
-<% @micropost = current_user.microposts.build(params[:micropost]) %>
+
 <% if signed_in? %>
+<% @micropost = current_user.microposts.build(params[:micropost]) %>
 <section>
 <div class="modal hide" id="entermodal" style="height:402px;width:402px;">
 		
