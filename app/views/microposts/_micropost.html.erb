@@ -1,7 +1,7 @@
 <div class="item" >
 
 
-  <span ><%= image_tag micropost.image_url.to_s if micropost.image? %></span>
+  <span ><%= image_tag micropost.image_url(:micropost) if micropost.image? %></span>
   <% if micropost.content? %>
   <div class="content"><%= micropost.content %></div>
   <% end %>

@@ -1,10 +1,10 @@
-<bar style="position:fixed;left:0px;top:0px;width:100%;height:55px;"></bar>
-<bar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
+<ar style="position:fixed;left:0px;top:0px;width:100%;height:55px;"></ar>
+<ar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
 	<% if signed_in? %>
 	<%= link_to "Sign out", signout_path, method: "delete" %>
 	<%= link_to "Settings", edit_user_path(current_user) %>
 	<% end %>	
-</bar>
+</ar>
 <div style="margin: 0px auto;width:960px;">
 <bar style="position:fixed;top:0px;width:80px;height:55px;"></bar>
 <bar style="position:fixed;margin-left:80px;top:0px;width:80px;height:55px;"></bar>
@@ -14,7 +14,6 @@
 <div style="position:fixed;margin-left:400px;top:0px;width:160px;height:55px;z-index:100;">
 	<section>
 	  <%= render 'shared/stats' %>
-	  <%= image_tag @user.image.to_s if @user.image? %>
 	</section>
 </div>
 <bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"></bar>
@@ -48,12 +47,16 @@
 <% end %>
 
 <bar1 style="z-index:50;position:absolute;right:240px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
+	<%= image_tag @user.image2_url(:tallavatar) if @user.image2? %>
 </bar1>
 <bar1 style="z-index:50;position:absolute;right:420px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
+	<%= image_tag @user.image3_url(:tallavatar) if @user.image3? %>
 </bar1>
 <bar1 style="z-index:50;position:absolute;right:600px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
+	<%= image_tag @user.image_url(:tallavatar) if @user.image? %>
 </bar1>
 <bar1 style="z-index:50;position:absolute;right:780px;margin-top:20px;margin-left:10px;width:180px;height:200px;">
+	<%= image_tag @user.avatar_url(:lavatar) if @user.avatar? %>
 </bar1>
 <bar1 style="z-index:50;position:absolute;right:785px;margin-top:225px;margin-left:10px;width:175px;height:195px;">
 	<%= render 'follow_form' if signed_in? %>
@@ -69,7 +72,7 @@
 </div>
 
 <aside style="position:absolute;">
-  <%= render @microposts %>	
+  <%= render @microposts.tagged_with(["beauty"], :any => true)  %>
 </div>
   <% end %>
 

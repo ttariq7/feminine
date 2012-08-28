@@ -2,7 +2,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
@@ -39,9 +39,53 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :scale => [50, 50]
-  # end
+
+  
+  version :micropost do
+    process :resize_to_fit => [210,700]
+  end
+
+  version :avatar do
+    process :resize_to_fill => [55,50]
+    process :rounded_corners => [100]
+  end
+  
+  version :lavatar do
+    process :resize_to_fill => [180,200]
+  end
+  
+  version :tallavatar do
+    process :resize_to_fill => [180,400]
+  end
+  
+
+  
+  def rounded_corners(radius) 
+           manipulate! do |img| 
+             mask = ::Magick::Image.new(img.columns, img.rows) { 
+               self.background_color = 'black' 
+             } 
+
+             gc = ::Magick::Draw.new 
+             gc.stroke('white').fill('white') 
+             gc.roundrectangle(0, 0, img.columns - 1, img.rows - 1, 
+   radius, radius) 
+             gc.draw(mask) 
+
+             mask.matte = false 
+             img.matte = true 
+
+             thumb = img.composite(mask, Magick::CenterGravity, 
+   Magick::CopyOpacityCompositeOp) 
+             thumb.alpha(Magick::ActivateAlphaChannel) 
+             thumb.format = 'png' 
+
+             #thumb.display 
+             puts "has alpha? #{thumb.alpha?} and returned 
+   #{thumb.inspect}" 
+             thumb 
+      end
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

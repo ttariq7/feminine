@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
   acts_as_voter
+  mount_uploader :avatar, ImageUploader
+  mount_uploader :image, ImageUploader
+  mount_uploader :image2, ImageUploader
+  mount_uploader :image3, ImageUploader
   
-  attr_accessible :name, :email, :password, :password_confirmation, :image
+  attr_accessible :name, :email, :password, :password_confirmation, :image, :avatar, :image2, :image3
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy

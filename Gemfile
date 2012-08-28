@@ -14,6 +14,7 @@ gem 'carrierwave'
 gem "fog"
 gem 'thumbs_up'
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem "rmagick"
 
 
 

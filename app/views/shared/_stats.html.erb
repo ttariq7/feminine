@@ -8,6 +8,10 @@
     <h5>following</h5>
   </span>
 
+  <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:3px;margin-left:52px;">
+	<%= image_tag @user.avatar_url(:avatar) if @user.avatar? %>
+  </span>
+
   <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:114px;">
     <h1 id="followers" class="stat">
       <%= @user.followers.count %>
