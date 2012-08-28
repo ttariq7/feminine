@@ -15,7 +15,6 @@
 	<section>
 	  <% if signed_in? %>
 	  <%= render 'shared/stats' %>
-	  <%= image_tag @user.image.to_s if @user.image? %>
 	  <% end %>
 	</section>
 </bar>
