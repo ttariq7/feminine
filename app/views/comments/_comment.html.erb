@@ -1,30 +1,3 @@
-<div>
-
-<%= form_for([micropost, @comment], :remote => true) do |f| %>
-<%= f.text_area :body, :placeholder => "Write a Comment..." %>
-<div><%= f.submit "Comment" %></div>
+<%= div_for comment do %>
+<%= comment.body %>
 <% end %>
-
-<div id="comments">
-	<%= micropost.comments.count %>
-     <%= render micropost.comments %>
-   </div>
-</div>
-
-
-  <% if current_user?(micropost.user) %>
-    <%= link_to "delete", micropost, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: micropost.content %>
-  <% end %>
-
-<% micropost.tags.any? %>
-        <% micropost.tags.each do |tag| %>
-        <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-<% end %>
-
-  <%=  link_to 'UP', vote_up_micropost_path(micropost.id), class: "btn" %>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    <%= micropost.votes_for %> Votes
-  </span>

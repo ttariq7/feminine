@@ -1,6 +1,6 @@
 <div class="item" >
 
-<div data-toggle="modal" href="#<%= micropost.id %>" style="cursor:pointer;cursor:hand;" >
+<div data-toggle="modal" href="#<%= micropost.id %>4" style="cursor:pointer;cursor:hand;" >
   <span ><%= image_tag micropost.image_url(:micropost) if micropost.image? %></span>
   <% if micropost.content? %>
   <div class="content"><%= micropost.content %></div>
@@ -8,7 +8,11 @@
 </div>
 
 
-  <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>
+  <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>
+	  <% if current_user?(micropost.user) %>
+	    <%= link_to "+", micropost, method: :delete, data: { confirm: "You sure?" },title: micropost.content %>
+	  <% end %>
+  </h3></barr>
 
   <span style="position:absolute;">
   <%= link_to micropost.user do %>
@@ -26,10 +30,36 @@
   <% end %>
   </span>
 
-<div class="modal hide" id="<%= micropost.id %>" >
-	  <div class="content"><%= micropost.content %></div>
-</div>
 
+
+
+
+
+
+<div class="modal hide" id="<%= micropost.id %>4" style="position:fixed;left:295px;height:90%;top:270px;width:940px;background-color:#953361;">
+	
+
+  <div><%= image_tag micropost.image_url(:lmicropost) if micropost.image? %></div>
+
+  <div class="content" style="width:660px;"><%= micropost.content if micropost.content? %></div>
+	
+	<div style="position:absolute;top:0px;right:0px;">
+		<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag @user.avatar_url(:avatar) if @user.avatar? %></span>
+		<h1 style="color:white;position:absolute;right:125px;top:5px;"><%= @user.name %></h1>
+	</div>
+	
+	<div style="position:absolute;top:60px;right:2px;width:254px;">
+	<%= form_for([micropost, @comment], :remote => true) do |f| %>
+	<span><%= f.text_area :body, class: "btn", style: "width:230px;", :placeholder => "Your Views..." %></span>
+	<span><%= f.submit "Comment", class: "btn", style: "width:252px;" %></span>
+	<% end %>
+	</div>
+	
+	<div id="<%=micropost.id%>" style="position:absolute;top:155px;right:0px;width:240px;">
+	    <%= render micropost.comments %>
+	</div>
+
+</div>
 </div>
 
 

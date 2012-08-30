@@ -1,0 +1,19 @@
+
+<div id="comments">
+  <%= render @micropost.comments, :locals => { :list => true } %>
+</div>
+
+<hr />
+
+<%= form_for([Micropost, @comment], :remote => true) do |f| %>
+<%= f.text_area :body, :placeholder => "Write a Comment..." %>
+<%= f.submit "Comment" %>
+<% end %>
+
+
+
+
+
+
+
+

@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
       @comment.user = current_user
       if @comment.save
            respond_to do |format|
-                format.html
+                format.html { redirect_to comments_path }
                 format.js
            end
          end

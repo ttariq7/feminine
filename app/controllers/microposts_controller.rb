@@ -49,6 +49,10 @@ class MicropostsController < ApplicationController
         @microposts = Micropost.micropostall
       end  
   end
+  
+  def tag_cloud
+    @tags = Micropost.tag_counts_on(:tags)
+  end
 
   private
 

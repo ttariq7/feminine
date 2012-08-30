@@ -80,6 +80,12 @@ ar {
 	);
 	border: 1px solid #620631;
 }
+
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }
+
 bar {
 	cursor: pointer;cursor: hand;
 	z-index:100;
@@ -154,6 +160,15 @@ overflow-y: scroll;
   margin-bottom:35px;
   float:left;
   border: 5px solid #1D1D1D;
+  box-shadow: 0px 2px 2px 0px #E21E79;
+}
+
+.tag {
+
+  background:grey;
+  padding:5px;
+  margin: 5px;
+  float:left;
   box-shadow: 0px 2px 2px 0px #E21E79;
 }
 

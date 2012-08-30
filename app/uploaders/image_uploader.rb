@@ -44,6 +44,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :micropost do
     process :resize_to_fit => [210,700]
   end
+  
+  version :lmicropost do
+    process :resize_to_fit => [680,2000]
+  end
 
   version :avatar do
     process :resize_to_fill => [55,50]

@@ -1,17 +1,10 @@
 
 
 
+<% tag_cloud(@tag_counts, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+	
+<%= link_to tagged_url(:tag => tag.name) do %>
+<div class="tag" style="display:block;background-color:white;position:relative;"><%= tag.name %></div>
+<% end %>
 
-
-
-
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span10">
-      <span><%= render Micropost.tagged_with(["health", "beauty"], :any => true)  %></span>
-    </div>
-    <div class="span2">
-     <span><%= render Micropost.tagged_with(["health", "beauty"], :any => true)  %></span>
-    </div>
-  </div>
-</div>
+<% end %>

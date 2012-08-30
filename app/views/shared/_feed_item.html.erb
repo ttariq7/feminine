@@ -1,7 +1,7 @@
 <div class="item">
 
-<div data-toggle="modal" href="#<%= feed_item.id %>" style="cursor:pointer;cursor:hand;" >
-  <span ><%= image_tag feed_item.image_url.to_s if feed_item.image? %></span>
+<div data-toggle="modal" href="#<%= feed_item.id %>4" style="cursor:pointer;cursor:hand;" >
+  <span ><%= image_tag feed_item.image_url(:micropost) if feed_item.image? %></span>
   <% if feed_item.content? %>
   <div class="content"><%= feed_item.content %></div>
   <% end %>
@@ -22,8 +22,34 @@
   <% end %>
   </span>
 
-<div class="modal hide" id="<%= feed_item.id %>" >
-	  <div class="content"><%= feed_item.content %></div>
+
+
+
+
+
+<div class="modal hide" id="<%= feed_item.id %>4" style="position:fixed;left:295px;height:90%;top:270px;width:940px;background-color:#953361;">
+
+
+  <div><%= image_tag feed_item.image_url(:lmicropost) if feed_item.image? %></div>
+
+  <div class="content" style="width:660px;"><%= feed_item.content if feed_item.content? %></div>
+
+	<div style="position:absolute;top:0px;right:0px;">
+		<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag @user.avatar_url(:avatar) if @user.avatar? %></span>
+		<h1 style="color:white;position:absolute;right:125px;top:5px;"><%= @user.name %></h1>
+	</div>
+
+	<div style="position:absolute;top:60px;right:2px;width:254px;">
+	<%= form_for([feed_item, @comment], :remote => true) do |f| %>
+	<span><%= f.text_area :body, class: "btn", style: "width:230px;", :placeholder => "Your Views..." %></span>
+	<span><%= f.submit "Comment", class: "btn", style: "width:252px;" %></span>
+	<% end %>
+	</div>
+
+	<div id="<%=feed_item.id%>" style="position:absolute;top:155px;right:0px;width:240px;">
+	    <%= render feed_item.comments %>
+	</div>
+
 </div>
 
 </div>
