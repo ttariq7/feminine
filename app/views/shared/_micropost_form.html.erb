@@ -4,10 +4,13 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
   </div>
+  <div class="field">
+    <%= f.text_area :link, placeholder: "paste link here" %>
+  </div>
 <%= f.label :tags %>
 <%= f.text_field :tag_list %>
 <%= f.label :kyahai %>
 <%= f.text_field :kyahai %>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Post", class: "btn", style:"width:300px;" %>
 <% end %>
 

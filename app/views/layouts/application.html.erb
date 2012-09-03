@@ -6,10 +6,34 @@
   <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "jquery-1.8.0.min" %>
-
+  <%= javascript_include_tag "jquery.embedly.min" %>
   <%= javascript_include_tag "jquery.masonry.min" %>
 
   <%= csrf_meta_tags %>
+
+<script type="text/javascript">
+  $('document').ready(function(){
+    $('div.linkl').embedly({
+      maxWidth: 680,
+	  width: 680,
+      wmode: 'transparent',
+      method: 'after',
+      key: 'ed3eccacb92c11e1ab024040aae4d8c9',
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  $('document').ready(function(){
+    $('div.link').embedly({
+      width: 210,
+      wmode: 'transparent',
+      method: 'after',
+      key: 'ed3eccacb92c11e1ab024040aae4d8c9',
+   	  chars: 100,
+    });
+  });
+</script>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -35,6 +59,7 @@ jQuery(document).ready(function($) {
     });
 });
 </script>
+
 
 
 </head>

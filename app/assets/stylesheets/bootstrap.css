@@ -163,6 +163,29 @@ overflow-y: scroll;
   box-shadow: 0px 2px 2px 0px #E21E79;
 }
 
+.question {
+
+  background:black;
+  width: 210px;
+  margin: 10px;
+  margin-left:14px;
+  margin-bottom:25px;
+  float:left;
+}
+
+.comments {
+
+  background:white;
+  width: 247px;
+  margin-bottom: 3px;
+  float:left;
+  color:black;
+  font-size:12px;
+  font-weight:bold;
+
+
+}
+
 .tag {
 
   background:grey;
@@ -176,10 +199,41 @@ overflow-y: scroll;
 
 	background:white;
 	color:black;
-	font-size:18px;
+	font-size:16px;
 	font-weight:bold;
 	text-align:center;
 	padding:10px;
+}
+
+.link {
+
+	background:white;
+	color:black;
+	font-size:12px;
+	display:block;
+	text-align:center;
+	margin-left: auto;
+    margin-right: auto;
+
+
+
+}
+
+.link img {
+	width:210px;
+}
+
+.linkl img {
+	width:680px;
+}
+
+.linkl {
+
+	background:white;
+	color:black;
+	font-size:15px;
+	text-align:center;
+
 }
 
 .main {
