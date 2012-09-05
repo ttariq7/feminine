@@ -11,9 +11,9 @@
 
 	@font-face {
 	font-family: "bankg";
-	src: url("../fonts/bankg.ttf");
+	src: url("../bankg.ttf");
 	src: local("?"),
-	url("../fonts/bankg.ttf") format("truetype");
+	url("../bankg.ttf") format("truetype");
 	}
 
 article,
