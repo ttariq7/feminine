@@ -1,0 +1,58 @@
+<div class="modal hide" id="entermodal" style="background:black;">
+	
+  <div class="">
+    
+	<tbar href="#home" data-toggle="tab" style="position:fixed;top:72px;height:40px;width:279px;" ><p>Log In</p></tbar>
+	<tbar href="#profile" data-toggle="tab"style="position:fixed;top:72px;margin-left:279px;height:40px;width:279px;" ><p>Join</p></tbar>
+		
+  </div>
+
+  <div class="">
+
+	<div class="tab-content">
+		
+		
+	  <div class="tab-pane active" id="home">
+	  	<div class="row" style="margin-left:77px;margin-top:70px;">
+		<%= form_for(:session, url: sessions_path) do |f| %>
+			  
+			<tbar style="margin-left:290px;position:fixed;top:144px;width:120px;height:42px;"><p>Email</p></tbar>
+		    <span><%= f.text_field :email, style: "width:282px;height:30px;" %></span>
+		
+			<tbar style="margin-left:290px;position:fixed;top:194px;width:120px;height:42px;"><p>Password</p></tbar>
+		    <span><%= f.password_field :password, style: "width:282px;height:30px;" %></span>
+		
+		    <span><%= f.submit "Sign in", class: "bar", style: "width:410px;height:42px;" %></span>
+		
+		<% end %>
+		</div>
+	  </div>
+			
+	
+	  <div class="tab-pane" id="profile">
+		<div class="row" style="margin-left:77px;margin-top:70px;">
+			<div class="modal hide"><%= @user = User.new %></div>
+		<%= form_for(@user) do |f| %>
+			
+			<tbar style="margin-left:290px;position:fixed;top:144px;width:120px;height:42px;"><p>Username</p></tbar>
+		    <span><%= f.text_field :name, style: "width:282px;height:30px;" %></span>
+		
+			<tbar style="margin-left:290px;position:fixed;top:194px;width:120px;height:42px;"><p>Email</p></tbar>
+		    <span><%= f.text_field :email, style: "width:282px;height:30px;" %></span>
+		
+			<tbar style="margin-left:290px;position:fixed;top:244px;width:120px;height:42px;"><p>Password</p></tbar>
+		    <span><%= f.password_field :password, style: "width:282px;height:30px;" %></span>
+		
+			<tbar style="margin-left:290px;position:fixed;top:294px;width:120px;height:42px;"><p>Repeat Password</p></tbar>
+		    <span><%= f.password_field :password_confirmation, style: "width:282px;height:30px;" %></span>
+		
+		    <span><%= f.submit "Join", class: "bar", style: "width:410px;height:42px;" %></span>
+		<% end %>
+
+		</div>
+	  </div>
+	
+	
+	</div>
+  </div>
+</div>

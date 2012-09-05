@@ -6,6 +6,7 @@ class StaticPagesController < ApplicationController
     end
     @microposts = Micropost.all
     @comment = Comment.new
+
   end
   
   def feed

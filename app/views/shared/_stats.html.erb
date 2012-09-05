@@ -1,7 +1,7 @@
 <% @user ||= current_user %>
 <div class="stats">
 	
-  <span href="<%= following_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:5px;color:#CC337A;">
+  <span href="<%= following_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:1px;color:#CC337A;">
     <h1 id="following" class="stat">
       <%= @user.followed_users.count %>
     </h1>
@@ -12,7 +12,7 @@
 	<%= image_tag @user.avatar_url(:avatar) if @user.avatar? %>
   </span>
 
-  <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:114px;">
+  <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:108px;">
     <h1 id="followers" class="stat">
       <%= @user.followers.count %>
     </h1>
