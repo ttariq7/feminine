@@ -1,6 +1,17 @@
 <%= render 'shared/header' %>
 
 <% @micropost  = current_user.microposts.build if signed_in? %>
+<% if signed_in? %>
+
+<section>
+<div class="modal hide" id="entermodal" style="width:600px;height:300px;background-color:#953361;"><%= render 'shared/micropost_form' %></div>
+<div class="modal hide" id="link" style="width:600px;height:500px;background-color:black;"><%= render 'shared/link_form' %></div>
+<div class="modal hide" id="text" style="width:600px;height:500px;background-color:black;"><%= render 'shared/text_form' %></div>
+<div class="modal hide" id="video" style="width:600px;height:500px;background-color:black;"><%= render 'shared/video_form' %></div>
+<div class="modal hide" id="picture" style="width:600px;height:500px;background-color:black;"><%= render 'shared/picture_form' %></div>
+</section>
+
+<% end %>
 
 
 <%= render 'profile' %>

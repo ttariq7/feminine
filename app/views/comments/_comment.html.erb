@@ -1,8 +1,8 @@
 <%= div_for comment do %>
 <span class="comments">
-	<span style="color:white;right:256px;top:5px;float:left;"><%= image_tag comment.user.avatar_url(:avatar) if 			comment.user.avatar? %></span>
-	<span style="font-size:14px;"><%= comment.user.name %>: </span>
-	<span><%= comment.body %></span>
+	<span style="color:white;right:256px;top:5px;float:left;margin:2px;"><%= image_tag comment.user.avatar_url(:avatar) if 			comment.user.avatar? %></span>
+	<span style="font-size:14px;"><h5 style="font-size:13px;"><%= comment.user.name %>:</h5> </span>
+	<div style=""><%= comment.body %></div>
 	<span style="font-size:10px;font-weight:normal;float:right;"><%= time_ago_in_words(comment.created_at) %> ago </span>
 	
 </span>

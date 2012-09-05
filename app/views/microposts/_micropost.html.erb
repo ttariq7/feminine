@@ -54,7 +54,7 @@
 <% end %>
 	
 	
-	
+	<div style="position:absolute;top:0px;right:0px;height:auto;width:260px;background-color:black;">
 	<div style="position:absolute;top:0px;right:0px;">
 		<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag micropost.user.avatar_url(:avatar) if micropost.user.avatar? %></span>
 		<h1 style="color:white;position:absolute;right:85px;top:5px;"><%= micropost.user.name %></h1>
@@ -62,13 +62,14 @@
 	
 	<div style="position:absolute;top:60px;right:2px;width:254px;">
 	<%= form_for([micropost, @comment], :remote => true) do |f| %>
-	<span><%= f.text_area :body, class: "btn", style: "width:230px;", :placeholder => "Your Views..." %></span>
-	<span><%= f.submit "Comment", class: "btn", style: "width:252px;" %></span>
+	<span><%= f.text_area :body, class: "bar", style: "width:242px;height:50px;margin-bottom:0px;", :placeholder => "Your Views..." %></span>
+	<span><%= f.submit "Comment", class: "bar", style: "width:252px;height:30px;" %></span>
 	<% end %>
 	</div>
 	
-	<div id="<%=micropost.id%>" style="position:absolute;top:155px;right:0px;width:253px;">
+	<div id="<%=micropost.id%>" style="position:absolute;top:155px;right:0px;width:255px;">
 	    <%= render micropost.comments %>
+	</div>
 	</div>
 	
 
