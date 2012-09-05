@@ -1,0 +1,13 @@
+<%= form_for @micropost, :html => {:multipart => true} do |f| %>
+
+<tbar style="position:fixed;width:600px;height:42px;"><p>Text</p></tbar>
+
+<tbar style="position:fixed;margin-left:50px;top:200px;width:120px;height:102px;"><p>Description</p></tbar>
+<span style="position:fixed;margin-left:168px;top:201px;"><%= f.text_field :content, style: "width:370px;height:91px;" %></span>
+
+<tbar style="position:fixed;margin-left:50px;top:320px;width:120px;height:42px;"><p>Tags</p></tbar>
+<span style="position:fixed;margin-left:168px;top:321px;"><%= f.text_field :tag_list, style: "width:370px;height:30px;" %></span>
+
+<span style="position:fixed;margin-left:50px;top:380px;"><%= f.submit "Post", class: "bar", style: "width:500px;height:42px;" %></span>
+
+<% end %>

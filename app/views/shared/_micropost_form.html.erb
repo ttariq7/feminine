@@ -1,16 +1,7 @@
-<%= form_for @micropost, :html => {:multipart => true} do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-	<%= f.file_field :image %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
-  </div>
-  <div class="field">
-    <%= f.text_area :link, placeholder: "paste link here" %>
-  </div>
-<%= f.label :tags %>
-<%= f.text_field :tag_list %>
-<%= f.label :kyahai %>
-<%= f.text_field :kyahai %>
-  <%= f.submit "Post", class: "btn", style:"width:300px;" %>
-<% end %>
+<tbar data-toggle="modal" href="#picture" style="position:absolute;margin-left:0px;width:200px;height:150px;"><p>Picture</p></tbar>
+<tbar data-toggle="modal" href="#link" style="position:absolute;margin-left:200px;width:200px;height:150px;"><p>Link</p></tbar>
+<tbar data-toggle="modal" href="#shopping" style="position:absolute;margin-left:400px;width:200px;height:150px;"><p>Shopping</p></tbar>
+<tbar data-toggle="modal" href="#video" style="position:absolute;margin-left:0px;top:150px;width:200px;height:150px;"><p>Video</p></tbar>
+<tbar data-toggle="modal" href="#text" style="position:absolute;margin-left:200px;top:150px;width:200px;height:150px;"><p>Text</p></tbar>
+<tbar data-toggle="modal" href="#recipe" style="position:absolute;margin-left:400px;top:150px;width:200px;height:150px;"><p>Recipe</p></tbar>
 

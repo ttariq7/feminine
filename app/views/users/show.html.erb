@@ -1,13 +1,6 @@
 <%= render 'shared/header' %>
 
 <% @micropost  = current_user.microposts.build if signed_in? %>
-<% if signed_in? %>
-
-<div class="modal hide" id="entermodal">
-  <%= render 'shared/micropost_form' %>
-</div>
-
-<% end %>
 
 
 <%= render 'profile' %>

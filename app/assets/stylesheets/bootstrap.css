@@ -13,7 +13,7 @@
 	font-family: "bankg";
 	src: url("../fonts/bankg.ttf");
 	src: local("?"),
-	url("../fonts/bankg.ttf") format("truetype"),
+	asset-url("../fonts/bankg.ttf") format("truetype");
 	}
 
 article,
