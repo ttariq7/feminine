@@ -1,8 +1,8 @@
-<div class="item">
+<div class="item" >
 
 <div data-toggle="modal" href="#<%= feed_item.id %>4" style="cursor:pointer;cursor:hand;" >
   <span ><%= image_tag feed_item.image_url(:micropost) if feed_item.image? %></span>
-
+  
   <div class="link"><a href= <%= feed_item.link %> ></a></div>
 
   <% if feed_item.content? %>
@@ -11,7 +11,11 @@
 </div>
 
 
-  <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>
+  <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>
+	  <% if current_user?(feed_item.user) %>
+	    <%= link_to "+", feed_item, method: :delete, data: { confirm: "You sure?" },title: feed_item.content %>
+	  <% end %>
+  </h3></barr>
 
   <span style="position:absolute;">
   <%= link_to feed_item.user do %>
@@ -20,8 +24,12 @@
   </span>	
 
   <span style="position:absolute;">
+  <% if signed_in? %>
   <%=  link_to vote_up_micropost_path(feed_item.id) do %> 
   <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= feed_item.votes_for %></h3></barr>	
+  <% end %>
+  <% else %>
+  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= feed_item.votes_for %></h3></barr>
   <% end %>
   </span>
 
@@ -30,11 +38,12 @@
 
 
 
-<div class="modal hide" id="<%= feed_item.id %>4" style="position:fixed;margin-left:-470px;height:90%;top:270px;width:940px;background-color:#953361;">
 
+<div class="modal hide" id="<%= feed_item.id %>4" style="position:fixed;margin-left:-470px;height:90%;top:270px;width:940px;background-color:#953361;">
+	
 
   <div><%= image_tag feed_item.image_url(:lmicropost) if feed_item.image? %></div>
-
+  
   <div class="linkl" style="width:680px;"><a href= <%= feed_item.link %> ></a></div>
   <div class="content" style="width:660px;"><%= feed_item.content if feed_item.content? %></div>
 
@@ -43,26 +52,30 @@
 <div class="tag" style="display:block;background-color:white;position:relative;"><%= tag_list %></div>
 <% end %>
 <% end %>
-
-
-<div style="position:absolute;top:0px;right:0px;">
-	<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag feed_item.user.avatar_url(:avatar) if feed_item.user.avatar? %></span>
-	<h1 style="color:white;position:absolute;right:125px;top:5px;"><%= feed_item.user.name %></h1>
-</div>
-
+	
+	
+	<div style="position:absolute;top:0px;right:0px;height:auto;width:260px;background-color:black;">
+	<div style="position:absolute;top:0px;right:0px;">
+		<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag feed_item.user.avatar_url(:avatar) if feed_item.user.avatar? %></span>
+		<h1 style="color:white;position:absolute;right:85px;top:5px;"><%= feed_item.user.name %></h1>
+	</div>
+	
 	<div style="position:absolute;top:60px;right:2px;width:254px;">
 	<%= form_for([feed_item, @comment], :remote => true) do |f| %>
-	<span><%= f.text_area :body, class: "btn", style: "width:230px;", :placeholder => "Your Views..." %></span>
-	<span><%= f.submit "Comment", class: "btn", style: "width:252px;" %></span>
+	<span><%= f.text_area :body, class: "bar", style: "width:242px;height:50px;margin-bottom:0px;", :placeholder => "Your Views..." %></span>
+	<span><%= f.submit "Comment", class: "bar", style: "width:252px;height:30px;" %></span>
 	<% end %>
 	</div>
-
-	<div id="<%=feed_item.id%>" style="position:absolute;top:155px;right:0px;width:240px;">
+	
+	<div id="<%=feed_item.id%>" style="position:absolute;top:155px;right:0px;width:255px;">
 	    <%= render feed_item.comments %>
 	</div>
+	</div>
+	
+
 
 </div>
-
 </div>
+
 
 
