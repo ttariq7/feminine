@@ -1,5 +1,12 @@
 <ar style="z-index:50;position:absolute;right:240px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
-	<%= image_tag @user.image2_url(:tallavatar) if @user.image2? %>
+	<% if @user.image2? %>
+		<%= image_tag @user.image2_url(:tallavatar) %>
+		<% else %>
+		<%= form_for @user, :html => {:multipart => true} do |f| %>
+		<%= f.file_field :image2 %>
+		<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+		<% end %>
+	<% end %>
 </ar>
 <ar style="z-index:50;position:absolute;right:420px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
 	<%= image_tag @user.image3_url(:tallavatar) if @user.image3? %>
