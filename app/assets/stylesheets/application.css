@@ -1,4 +1,9 @@
-
+@font-face {
+font-family: "bankg";
+src: url("../bankg.ttf");
+src: local("?"),
+url("../bankg.ttf") format("truetype");
+}
 
 
 bar {
