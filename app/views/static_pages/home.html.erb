@@ -13,7 +13,7 @@
 
 <aside style="position:absolute;">
 
-   <% Micropost.tagged_with(["health", "beauty"], :any => true).each do |micropost| %>
+   <% Micropost.where(kyahai: "3").each do |micropost| %>
 	
 	<div class="question" >
 

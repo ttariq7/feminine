@@ -35,7 +35,10 @@ class MicropostsController < ApplicationController
   def vote_up
     begin
       current_user.vote_for(@micropost = Micropost.find(params[:id]))
-      redirect_to current_user
+      respond_to do |format|
+        format.html
+        format.js
+      end
       
     rescue ActiveRecord::RecordInvalid
       redirect_to current_user
@@ -46,7 +49,7 @@ class MicropostsController < ApplicationController
         if params[:tag].present? 
         @microposts = Micropost.tagged_with(params[:tag])
       else 
-        @microposts = Micropost.micropostall
+        @microposts = Micropost.all
       end  
   end
   

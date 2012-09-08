@@ -13,7 +13,7 @@
 
   <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>
 	  <% if current_user?(micropost.user) %>
-	    <%= link_to "+", micropost, method: :delete, data: { confirm: "You sure?" },title: micropost.content %>
+	    <%= link_to "X", micropost, method: :delete, data: { confirm: "You sure?" },title: micropost.content %>
 	  <% end %>
   </h3></barr>
 
@@ -25,11 +25,11 @@
 
   <span style="position:absolute;">
   <% if signed_in? %>
-  <%=  link_to vote_up_micropost_path(micropost.id) do %> 
-  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= micropost.votes_for %></h3></barr>	
+  <%=  link_to(vote_up_micropost_path(micropost.id), :remote => true) do |f| %> 
+  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>	
   <% end %>
   <% else %>
-  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3><%= micropost.votes_for %></h3></barr>
+  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>
   <% end %>
   </span>
 
@@ -57,7 +57,9 @@
 	<div style="position:absolute;top:0px;right:0px;height:auto;width:260px;background-color:black;">
 	<div style="position:absolute;top:0px;right:0px;">
 		<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag micropost.user.avatar_url(:avatar) if micropost.user.avatar? %></span>
-		<h1 style="color:white;position:absolute;right:85px;top:5px;"><%= micropost.user.name %></h1>
+		<h1 style="color:white;position:absolute;right:60px;top:5px;"><%= micropost.user.name %></h1>
+		<h6 style="font-size:10px;color:#CC337A;float:right;"><%= time_ago_in_words(micropost.created_at) %> ago </h6>
+		<tbar style="position:absolute;font-size:15px;color:white;float:right;right:4px;top:40px;">Plus:<%= micropost.votes_for %></tbar>
 	</div>
 	
 	<div style="position:absolute;top:60px;right:2px;width:254px;">

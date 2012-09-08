@@ -24,7 +24,7 @@
 </div>
 
 <aside style="position:absolute;">
-  <%= render @microposts.tagged_with(["beauty"], :any => true)  %>
+  <%= render @microposts.where(kyahai: "3")  %>
 </div>
 
 <% end %>

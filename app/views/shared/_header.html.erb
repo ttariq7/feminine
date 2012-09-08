@@ -1,16 +1,15 @@
 <ar style="position:fixed;left:0px;top:0px;width:100%;height:55px;box-shadow: 0px 2px 2px 0px black;"></ar>
-<ar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
-	<% if signed_in? %>
-	<%= link_to "Sign out", signout_path, method: "delete" %>
-	<%= link_to "Directory", users_path, method: "delete" %>
-	<% end %>	
+<ar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">	
 </ar>
 <div style="margin: 0px auto;width:960px;">
 <bar style="position:fixed;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">HEALTH</h5></bar>
+<%= link_to tagged_url(:tag => "beauty") do %>
 <bar style="position:fixed;margin-left:80px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">BEAUTY</h5></bar>
+<% end %>
+
 <bar style="position:fixed;margin-left:160px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">FASHION</h5></bar>
-<bar style="position:fixed;margin-left:240px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">SHOES</h5></bar>
-<bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">ACCESORIES</h5></bar>
+<bar style="position:fixed;margin-left:240px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">ACCESORIES</h5></bar>
+<bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">LIVING</h5></bar>
 <bar style="position:fixed;margin-left:400px;top:0px;width:160px;height:56px;z-index:900;box-shadow: 0px 3px 3px 0px black;">
 
 	  <% if signed_in? %>
@@ -18,20 +17,20 @@
 	  <% end %>
 
 </bar>
-<bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">?</h5></bar>
-<bar style="position:fixed;margin-left:640px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">SHOPPING</h5></bar>
-<bar style="position:fixed;margin-left:720px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MARRIAGE</h5></bar>
+<bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MARRIAGE</h5></bar>
+<bar style="position:fixed;margin-left:640px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MUMS</h5></bar>
+<bar style="position:fixed;margin-left:720px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">GOSSIP</h5></bar>
 <bar style="position:fixed;margin-left:800px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">RECIPES</h5></bar>
-<bar style="position:fixed;margin-left:880px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">GOSSIP</h5></bar>
+<bar style="position:fixed;margin-left:880px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">SHOPPING</h5></bar>
 </div>
 <div style="margin: 0px auto;width:960px;">
 <%= link_to root_path do %><bar style="z-index:90;position:fixed;margin-left:322px;top:55px;width:106px;height:40px;">
 	<img src="/assets/globe.png" alt="rss feed" style="opacity:0.3;margin-top:10px;width:20px;height:20px;"/>
-	<h5 style="margin-top:-5px;">All</h5>
+	<h5 style="margin-top:-5px;">Home</h5>
 </bar1><% end %>
 <%= link_to '/feed' do %><bar style="z-index:90;position:fixed;margin-left:428px;top:55px;width:106px;height:40px;">
 	<img src="/assets/user_group.png" alt="rss feed" style="opacity:0.3;margin-top:10px;width:30px;height:20px;"/>
-	<h5 style="margin-top:-5px;">Following</h5>
+	<h5 style="margin-top:-5px;">Feed</h5>
 </bar1><% end %>
 <%= link_to current_user do %><bar style="z-index:90;position:fixed;margin-left:534px;top:55px;width:105px;height:40px;">
 	<img src="/assets/user.png" alt="rss feed" style="opacity:0.3;color:black;margin-top:10px;width:20px;height:20px;"/>
@@ -46,4 +45,16 @@
 <bar data-toggle="modal" href="#entermodal" style="border:0px;position:fixed;bottom:0px;margin-left:400px;height:41px;">
 <img src="/assets/logo.png" alt="rss feed" />
 </bar>
+<% if signed_in? %>
+<%= link_to users_path do %><bar style="z-index:999;position:fixed;bottom:0px;right:0px;width:106px;height:40px;">
+	<img src="/assets/search.png" alt="rss feed" style="opacity:0.7;margin-top:10px;width:20px;height:20px;"/>
+	<h5 style="margin-top:-5px;">Search</h5>
+</bar1><% end %>
+
+<%= link_to signout_path, method: "delete" do %><bar style="z-index:999;position:fixed;bottom:0px;left:0px;width:106px;height:40px;">
+	
+	<h5 style="margin-top:25px;">Sign Out</h5>
+</bar1><% end %>
+<% end %>
+
 </div>

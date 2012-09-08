@@ -12,7 +12,7 @@
 	<%= image_tag @user.avatar_url(:avatar) if @user.avatar? %>
   </div>
 
-  <div href="<%= followers_user_path(@user) %>" style="text-align:center;position:fixed;margin-left:108px;">
+  <div href="<%= followers_user_path(@user) %>" style="text-align:center;position:fixed;margin-left:109px;">
     <h1 id="followers">
       <%= @user.followers.count %>
     </h1>

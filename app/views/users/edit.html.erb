@@ -1,33 +1,38 @@
-<h1>Editing user</h1>
+<%= render 'shared/header' %>
+<div style="margin: 0px auto;width:960px;">
+<h1 style="margin-left:105px;"><%= current_user.name %></h1>
 
-
-<div class="row">
-  <div class="span6 offset3">
+<div class="row" style="margin-left:60px;margin-bottom:600px;z-index:50;">
+  <div class="">
 	<%= form_for @user, :html => {:multipart => true} do |f| %>
+	
+	
+	<tbar style="position:absolute;margin-left:50px;top:150px;width:120px;height:42px;z-index:60;"><o>Email</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:151px;"><%= f.text_field :email, style: "width:370px;height:30px;" %></span>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+	<tbar style="position:absolute;margin-left:50px;top:220px;width:120px;height:42px;z-index:60;"><o>Profile Picture</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:220px;"><%= f.file_field :avatar, class: "bar", style: "width:378px;height:40px;" %></span>
+	
+	<tbar style="position:absolute;margin-left:50px;top:290px;width:120px;height:42px;z-index:60;"><o>Avatar 1</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:290px;"><%= f.file_field :image, class: "bar", style: "width:378px;height:40px;" %></span>
+	
+	<tbar style="position:absolute;margin-left:50px;top:360px;width:120px;height:42px;z-index:60;"><o>Avatar 2</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:360px;"><%= f.file_field :image2, class: "bar", style: "width:378px;height:40px;" %></span>
+	
+	<tbar style="position:absolute;margin-left:50px;top:430px;width:120px;height:42px;z-index:60;"><o>Avatar 3</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:430px;"><%= f.file_field :image3, class: "bar", style: "width:378px;height:40px;" %></span>
 
-	  <%= f.file_field :avatar %>
+	<tbar style="position:absolute;margin-left:50px;top:500px;width:120px;height:42px;z-index:60;"><o>Password</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:501px;"><%= f.text_field :password, style: "width:370px;height:30px;" %></span>
+	
+	<tbar style="position:absolute;margin-left:50px;top:570px;width:120px;height:42px;z-index:60;"><o>Confirm Password</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:571px;"><%= f.text_field :password_confirmation, style: "width:370px;height:30px;" %></span>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+	<span style="position:absolute;margin-left:50px;top:640px;"><%= f.submit "Update", class: "bar", style: "width:500px;height:42px;" %></span>
 
-	  <%= f.file_field :image %>
-	  <%= f.file_field :image2 %>
-	  <%= f.file_field :image3 %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
 
   </div>
 </div>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+</div>
