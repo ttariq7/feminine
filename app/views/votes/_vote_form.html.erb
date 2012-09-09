@@ -1,0 +1,7 @@
+  <div id="" style="position:absolute;">
+  <% if current_user.voted_for?(Micropost.find(params[@micropost])) %>
+<%= render 'votes/unvote' %>
+  <% else %>
+<%= render 'votes/vote' %>
+  <% end %>
+  </div>
