@@ -23,10 +23,10 @@
 	<span style="position:absolute;margin-left:168px;top:430px;"><%= f.file_field :image3, class: "bar", style: "width:378px;height:40px;" %></span>
 
 	<tbar style="position:absolute;margin-left:50px;top:500px;width:120px;height:42px;z-index:60;"><o>Password</o></tbar>
-	<span style="position:absolute;margin-left:168px;top:501px;"><%= f.text_field :password, style: "width:370px;height:30px;" %></span>
+	<span style="position:absolute;margin-left:168px;top:501px;"><%= f.password_field :password, style: "width:370px;height:30px;" %></span>
 	
 	<tbar style="position:absolute;margin-left:50px;top:570px;width:120px;height:42px;z-index:60;"><o>Confirm Password</o></tbar>
-	<span style="position:absolute;margin-left:168px;top:571px;"><%= f.text_field :password_confirmation, style: "width:370px;height:30px;" %></span>
+	<span style="position:absolute;margin-left:168px;top:571px;"><%= f.password_field :password_confirmation, style: "width:370px;height:30px;" %></span>
 
 	<span style="position:absolute;margin-left:50px;top:640px;"><%= f.submit "Update", class: "bar", style: "width:500px;height:42px;" %></span>
 

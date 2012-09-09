@@ -23,7 +23,7 @@
   <% end %>
   </span>	
 
-  <span id="<%=micropost.id%>"style="position:absolute;">
+  <span id="vote_form"style="position:absolute;">
 	  <% if current_user.voted_for?(micropost) %>
 	 	<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>✓</h3></barr>
 	  <% else %>
@@ -39,7 +39,7 @@
 
 
 
-<div class="modal hide" id="<%= micropost.id %>4" style="position:fixed;margin-left:-470px;height:90%;top:270px;width:940px;background-color:black;border: 5px solid white;">
+<div class="modal hide" id="<%= micropost.id %>4" style="position:fixed;margin-left:-475px;height:90%;top:270px;width:940px;background-color:black;border: 9px solid white;">
 	
 
   <div><%= image_tag micropost.image_url(:lmicropost) if micropost.image? %></div>

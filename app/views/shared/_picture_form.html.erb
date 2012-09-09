@@ -2,24 +2,23 @@
 
 <tbar style="position:fixed;width:600px;height:42px;"><p>Picture</p></tbar>
 
-<div class="btn-group" data-toggle="buttons-radio" style="position:fixed;top:130px;margin-left:50px;">
-  <button type="button" class="btn" style="height:60px;width:166px;">Chatter<%= f.radio_button :kyahai, '2', :checked => true %></button>
+<div class="btn-group" data-toggle="buttons-radio" style="position:fixed;top:140px;margin-left:50px;">
+  <button type="button" class="btn" style="height:60px;width:166px;">Nolyj<%= f.radio_button :kyahai, '2', :checked => true %></button>
   <button type="button" class="btn" style="height:60px;width:166px;">Question<%= f.radio_button :kyahai, '3' %></button>
-  <button type="button" class="btn" style="height:60px;width:166px;">Advice<%= f.radio_button :kyahai, '4' %></button>
+  <button type="button" class="btn" style="height:60px;width:167px;">Advice<%= f.radio_button :kyahai, '4' %></button>
 </div>
 
 
+<tbar style="position:fixed;margin-left:50px;top:230px;width:120px;height:42px;"><p>Image</p></tbar>
+<span style="position:fixed;margin-left:168px;top:230px;"><%= f.file_field :image, class: "bar", style: "width:377px;height:40px;" %></span>
 
-<tbar style="position:fixed;margin-left:50px;top:210px;width:120px;height:42px;"><p>Image</p></tbar>
-<span style="position:fixed;margin-left:168px;top:210px;"><%= f.file_field :image, class: "bar", style: "width:370px;height:40px;" %></span>
+<tbar style="position:fixed;margin-left:50px;top:290px;width:120px;height:102px;"><p>Description</p></tbar>
+<span style="position:fixed;margin-left:168px;top:291px;"><%= f.text_field :content, style: "width:370px;height:91px;" %></span>
 
-<tbar style="position:fixed;margin-left:50px;top:270px;width:120px;height:102px;"><p>Description</p></tbar>
-<span style="position:fixed;margin-left:168px;top:271px;"><%= f.text_field :content, style: "width:370px;height:91px;" %></span>
+<tbar style="position:fixed;margin-left:50px;top:410px;width:120px;height:42px;"><p>Tags</p></tbar>
+<span style="position:fixed;margin-left:168px;top:411px;"><%= f.text_field :tag_list, style: "width:370px;height:30px;" %></span>
 
-<tbar style="position:fixed;margin-left:50px;top:390px;width:120px;height:42px;"><p>Tags</p></tbar>
-<span style="position:fixed;margin-left:168px;top:391px;"><%= f.text_field :tag_list, style: "width:370px;height:30px;" %></span>
-
-<span style="position:fixed;margin-left:50px;top:470px;"><%= f.submit "Post", class: "bar", style: "width:500px;height:42px;" %></span>
+<span style="position:fixed;margin-left:50px;top:490px;"><%= f.submit "Post", class: "bar", style: "width:500px;height:42px;" %></span>
 
 <% end %>
 
