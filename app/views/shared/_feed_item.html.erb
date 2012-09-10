@@ -58,7 +58,7 @@
 	<div style="position:absolute;top:0px;right:0px;">
 		<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag feed_item.user.avatar_url(:avatar) if feed_item.user.avatar? %></span>
 		<h1 style="color:white;position:absolute;right:4px;top:5px;"><%= feed_item.user.name %></h1>
-		<h6 style="font-size:10px;color:#CC337A;float:right;right:1px;"><%= time_ago_in_words(feed_item.created_at) %> ago </h6>
+		<h6 style="font-size:8px;color:#CC337A;float:right;right:1px;"><%= time_ago_in_words(feed_item.created_at) %> ago </h6>
 		<tbar style="position:absolute;font-size:15px;color:white;float:right;right:4px;top:40px;">Plus:<%= feed_item.votes_for %></tbar>
 	</div>
 	

@@ -22,6 +22,18 @@ Feminine::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/help',  to: 'static_pages#help'
+  
+  match '/health',  to: 'static_pages#health'
+  match '/beauty',  to: 'static_pages#beauty'
+  match '/fashion',  to: 'static_pages#fashion'
+  match '/living',  to: 'static_pages#living'
+  match '/health',  to: 'static_pages#health'
+  match '/marriage',  to: 'static_pages#marriage'
+  match '/mums',  to: 'static_pages#mums'
+  match '/gossip',  to: 'static_pages#gossip'
+  match '/recipes',  to: 'static_pages#recipes'
+  match '/shopping',  to: 'static_pages#shopping'
+  
   match '/signout', to: 'sessions#destroy', via: :delete
   match 'tagged' => 'microposts#tagged', :as => 'tagged'
 

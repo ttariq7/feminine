@@ -1,9 +1,8 @@
 <%= render 'shared/header' %>
 
-
 	
 <% if signed_in? %>
-<div id="container" style="margin-right:240px;margin-left:1%;display:block;">
+<div id="container" style="margin-right:240px;left:1%;display:block;">
    <%= render 'shared/feed' %>
 </div>
 
@@ -11,6 +10,7 @@
    <%= render 'shared/feedq' %>
 </aside>
 <% end %>
+
 
 
 

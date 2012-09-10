@@ -24,6 +24,7 @@ class MicropostsController < ApplicationController
        format.html # show.html.erb
        format.xml  { render :xml => @micropost }
      end
+     
    end
 
   def destroy
@@ -51,6 +52,7 @@ class MicropostsController < ApplicationController
       else 
         @microposts = Micropost.all
       end  
+      @comment = Comment.new
   end
   
   def tag_cloud

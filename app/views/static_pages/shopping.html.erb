@@ -1,9 +1,10 @@
 <%= render 'shared/header' %>
 
+	
 <div id="container" style="margin-right:240px;margin-left:1%;display:block;">
-	<%= render Micropost.tagged_with(params[:tag])  %>
+   <%= render Micropost.tagged_with(["shopping"], :any => true)  %>
 </div>
 
 <aside style="position:absolute;">
-   <%= render Micropost.tagged_with(params[:tag]).where(kyahai: "3")  %>
+   <%= render Micropost.tagged_with(["shopping"], :any => true).where(kyahai: "3")  %>
 </aside>

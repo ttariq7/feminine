@@ -2,14 +2,21 @@
 <ar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">	
 </ar>
 <div style="margin: 0px auto;width:960px;">
+<%= link_to tagged_url(:tag => "health") do %>
 <bar style="position:fixed;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">HEALTH</h5></bar>
+<% end %>
 <%= link_to tagged_url(:tag => "beauty") do %>
 <bar style="position:fixed;margin-left:80px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">BEAUTY</h5></bar>
 <% end %>
-
+<%= link_to tagged_url(:tag => "fashion") do %>
 <bar style="position:fixed;margin-left:160px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">FASHION</h5></bar>
+<% end %>
+<%= link_to tagged_url(:tag => "accesory") do %>
 <bar style="position:fixed;margin-left:240px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">ACCESORIES</h5></bar>
+<% end %>
+<%= link_to tagged_url(:tag => "living") do %>
 <bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">LIVING</h5></bar>
+<% end %>
 <bar style="position:fixed;margin-left:400px;top:0px;width:160px;height:56px;z-index:900;box-shadow: 0px 3px 3px 0px black;">
 
 	  <% if signed_in? %>
@@ -17,11 +24,21 @@
 	  <% end %>
 
 </bar>
+<%= link_to tagged_url(:tag => "marriage") do %>
 <bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MARRIAGE</h5></bar>
+<% end %>
+<%= link_to tagged_url(:tag => "mums") do %>
 <bar style="position:fixed;margin-left:640px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MUMS</h5></bar>
+<% end %>
+<%= link_to tagged_url(:tag => "gossip") do %>
 <bar style="position:fixed;margin-left:720px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">GOSSIP</h5></bar>
+<% end %>
+<%= link_to tagged_url(:tag => "recipes") do %>
 <bar style="position:fixed;margin-left:800px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">RECIPES</h5></bar>
+<% end %>
+<%= link_to tagged_url(:tag => "shopping") do %>
 <bar style="position:fixed;margin-left:880px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">SHOPPING</h5></bar>
+<% end %>
 </div>
 <div style="margin: 0px auto;width:960px;">
 <%= link_to root_path do %><bar style="z-index:90;position:fixed;margin-left:322px;top:55px;width:106px;height:40px;">

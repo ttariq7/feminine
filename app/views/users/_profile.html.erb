@@ -1,3 +1,4 @@
+
 <ar style="z-index:50;position:absolute;right:240px;margin-top:20px;margin-left:10px;width:180px;height:400px;">
 	<%= image_tag @user.image3_url(:tallavatar) if @user.image3? %>
 </ar>
@@ -23,15 +24,16 @@
 	<%= link_to "Edit", edit_user_path(current_user), class: "bar", style: "position:absolute;width:168px;height:25px;" if @user == current_user %>
   	</span>
 
-	<span href="<%= following_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:5px;margin-top:110px;">
+	<a href="<%= following_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:5px;margin-top:110px;">
     <h1 id="following" class="stat" style="color:white;"><%= @user.followed_users.count %></h1><h5 style="color:white;">following</h5>
-  	</span>
+  	</a>
+
 
     <span style="text-align:center;position:absolute;margin-top:110px;margin-left:68px;">
     <h1 style="color:white;"><%= @user.microposts.count %></h1><h5 style="color:white;">posts</h5>
   	</span>
 
-    <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:110px;margin-left:120px;">
+    <a href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:110px;margin-left:120px;">
     <h1 id="followers" class="stat" style="color:white;"><%= @user.followers.count %></h1><h5 style="color:white;">followers</h5>
-  	</span>	
+  	</a>	
 </ar>

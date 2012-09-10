@@ -1,0 +1,6 @@
+<%= render 'shared/header' %>
+
+	
+<div id="container" style="margin-right:240px;margin-left:1%;display:block;">
+   <%= render Micropost.tagged_with(["health"], :any => true)  %>
+</div>

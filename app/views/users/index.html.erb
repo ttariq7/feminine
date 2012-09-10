@@ -1,73 +1,53 @@
-<ar style="position:fixed;left:0px;top:0px;width:100%;height:55px;box-shadow: 0px 2px 2px 0px black;"></ar>
-<ar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">	
-</ar>
-<div style="margin: 0px auto;width:960px;">
-<bar style="position:fixed;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">HEALTH</h5></bar>
-<%= link_to tagged_url(:tag => "beauty") do %>
-<bar style="position:fixed;margin-left:80px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">BEAUTY</h5></bar>
-<% end %>
+<%= render 'shared/header' %>
 
-<bar style="position:fixed;margin-left:160px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">FASHION</h5></bar>
-<bar style="position:fixed;margin-left:240px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">ACCESORIES</h5></bar>
-<bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">LIVING</h5></bar>
-<bar style="position:fixed;margin-left:400px;top:0px;width:160px;height:56px;z-index:900;box-shadow: 0px 3px 3px 0px black;">
+<h1>Members Club</h1>
 
-	  <% if signed_in? %>
-	  <%= render 'shared/stats' %>
-	  <% end %>
-
-</bar>
-<bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MARRIAGE</h5></bar>
-<bar style="position:fixed;margin-left:640px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MUMS</h5></bar>
-<bar style="position:fixed;margin-left:720px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">GOSSIP</h5></bar>
-<bar style="position:fixed;margin-left:800px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">RECIPES</h5></bar>
-<bar style="position:fixed;margin-left:880px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">SHOPPING</h5></bar>
-</div>
-<div style="margin: 0px auto;width:960px;">
-<%= link_to root_path do %><bar style="z-index:90;position:fixed;margin-left:322px;top:55px;width:106px;height:40px;">
-	<img src="/assets/globe.png" alt="rss feed" style="opacity:0.3;margin-top:10px;width:20px;height:20px;"/>
-	<h5 style="margin-top:-5px;">Home</h5>
-</bar1><% end %>
-<%= link_to '/feed' do %><bar style="z-index:90;position:fixed;margin-left:428px;top:55px;width:106px;height:40px;">
-	<img src="/assets/user_group.png" alt="rss feed" style="opacity:0.3;margin-top:10px;width:30px;height:20px;"/>
-	<h5 style="margin-top:-5px;">Feed</h5>
-</bar1><% end %>
-<%= link_to current_user do %><bar style="z-index:90;position:fixed;margin-left:534px;top:55px;width:105px;height:40px;">
-	<img src="/assets/user.png" alt="rss feed" style="opacity:0.3;color:black;margin-top:10px;width:20px;height:20px;"/>
-	<h5 style="margin-top:-5px;">Profile</h5>
-</bar1><% end %>
-</div>
-
-<div style="margin: 0px auto;width:960px;">
-<bar data-toggle="modal" href="#entermodal" style="border:0px;position:fixed;bottom:0px;margin-left:400px;height:41px;">
-<img src="/assets/logo.png" alt="rss feed" />
-</bar>
 <% if signed_in? %>
-<%= link_to users_path do %><bar style="z-index:999;position:fixed;bottom:0px;right:0px;width:106px;height:40px;">
-	<img src="/assets/search.png" alt="rss feed" style="opacity:0.7;margin-top:10px;width:20px;height:20px;"/>
-	<h5 style="margin-top:-5px;">Search</h5>
-</bar1><% end %>
 
-<%= link_to signout_path, method: "delete" do %><bar style="z-index:999;position:fixed;bottom:0px;left:0px;width:106px;height:40px;">
-	
-	<h5 style="margin-top:25px;">Sign Out</h5>
-</bar1><% end %>
+<div style="margin-right:240px;">
+<% @user ||= current_user %>
+<% @users.each do |user| %>
+  <div class="dir" style="z-index:50;">
+  <%= link_to user do %>
+
+        <span style="text-align:center;position:absolute;opacity:0.5;"><%= image_tag user.avatar_url(:lavatar) if user.avatar? %></span>
+
+		<span style="text-align:center;position:absolute;margin-top:10px;margin-left:8px;">
+	    <h1 style="color:white;"><%= user.name %></h1>
+	  	</span>
+
+	    <span style="text-align:center;position:absolute;margin-top:165px;margin-left:3px;">
+		<%= render 'follow_form' if signed_in? %>
+	  	</span>
+
+		<span href="<%= following_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:5px;margin-top:140px;">
+	    <h1 id="following" class="stat" style="color:white;"><%= user.followed_users.count %></h1><h5 style="color:white;">following</h5>
+	  	</span>
+
+	    <span style="text-align:center;position:absolute;margin-top:140px;margin-left:68px;">
+	    <h1 style="color:white;"><%= user.microposts.count %></h1><h5 style="color:white;">posts</h5>
+	  	</span>
+
+	    <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:140px;margin-left:120px;">
+	    <h1 id="followers" class="stat" style="color:white;"><%= user.followers.count %></h1><h5 style="color:white;">followers</h5>
+	  	</span>	
+
+  <% end %>
+  </div>
 <% end %>
-
+<% end %>
 </div>
 
-<h1>Listing users</h1>
-
-<table>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
 <br />
+
+
+<script type="text/javascript">
+$(function(){
+  $('#container').masonry({
+
+    itemSelector : '.dir',
+    columnWidth : 180;
+  });
+});
+</script>
