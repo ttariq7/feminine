@@ -258,13 +258,27 @@ overflow-y: scroll;
 }
 
 .question {
-
-  background:black;
+  opacity:0.5;
+font-weight:bold;
+  background:white;
   width: 210px;
   margin: 10px;
   margin-left:14px;
-  margin-bottom:25px;
+  margin-bottom:0px;
   float:left;
+  font-size:12px;
+}
+
+.question:hover {
+  opacity:1;
+font-weight:bold;
+  background:white;
+  width: 210px;
+  margin: 10px;
+  margin-left:14px;
+  margin-bottom:0px;
+  float:left;
+  font-size:12px;
 }
 
 .comments {
@@ -280,12 +294,11 @@ overflow-y: scroll;
 }
 
 .tag {
-
-  background:grey;
+  color:#CC337A;
   padding:5px;
   margin: 5px;
   float:left;
-  box-shadow: 0px 2px 2px 0px #E21E79;
+  box-shadow: 0px 2px 2px 0px black;
 }
 
 .content {

@@ -1,0 +1,70 @@
+
+<ar style="z-index:50;position:absolute;right:240px;margin-top:20px;margin-left:10px;width:538px;height:399px;">
+
+
+
+<% if signed_in? %>
+<div style="margin-top:0px;">
+<% @user ||= current_user %>
+<% @users.each do |user| %>
+  <div class="dirr" style="z-index:50;width:179px;height: 199px;margin:0px;margin-bottom:0px;float:left;">
+  <%= link_to user do %>
+
+        <span style="text-align:center;position:absolute;opacity:0.5;"><%= image_tag user.avatar_url(:lavatar) if user.avatar? %></span>
+
+		<span style="text-align:center;position:absolute;margin-top:10px;margin-left:8px;">
+	    <h1 style="color:white;"><%= user.name %></h1>
+	  	</span>
+
+		<span href="<%= following_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:5px;margin-top:140px;">
+	    <h1 id="following" class="stat" style="color:white;"><%= user.followed_users.count %></h1><h5 style="color:white;">following</h5>
+	  	</span>
+
+	    <span style="text-align:center;position:absolute;margin-top:140px;margin-left:68px;">
+	    <h1 style="color:white;"><%= user.microposts.count %></h1><h5 style="color:white;">posts</h5>
+	  	</span>
+
+	    <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:140px;margin-left:120px;">
+	    <h1 id="followers" class="stat" style="color:white;"><%= user.followers.count %></h1><h5 style="color:white;">followers</h5>
+	  	</span>	
+
+  <% end %>
+  </div>
+<% end %>
+</div>
+<% end %>
+
+
+</ar>
+
+
+
+
+
+
+<ar style="z-index:50;position:absolute;right:783px;margin-top:20px;margin-left:0px;width:187px;height:399px;">
+<bar style="z-index:50;position:absolute;width:187px;height:30px;border:0;"><h3>Trending</h3></bar>
+
+<div style="margin-top:35px;">	
+<% tag_cloud(@tag_counts, %w(css1 css2 css3 css4)) do |tag, css_class| %>	
+<%= link_to tagged_url(:tag => tag.name) do %>
+<ar class="tag" style="display:block;font-family:bankg;font-size:15px;"><%= tag.name %></ar>
+<% end %>
+<% end %>
+</div>
+
+</ar>
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#container').masonry({
+
+    itemSelector : '.dirr',
+    columnWidth : 180;
+  });
+});
+</script>

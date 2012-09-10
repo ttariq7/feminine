@@ -1,0 +1,90 @@
+<div class="item" >
+
+
+<div data-toggle="modal" href="#<%= micropost.id %>4" style="cursor:pointer;cursor:hand;" >
+  <span ><%= image_tag micropost.image_url(:micropost) if micropost.image? %></span>
+  
+  <div class="link"><a href= <%= micropost.link %> ></a></div>
+
+  <% if micropost.content? %>
+  <div class="content"><%= micropost.content %></div>
+  <% end %>
+</div>
+
+
+  <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>
+	  <% if current_user?(micropost.user) %>
+	    <%= link_to "X", micropost, method: :delete, data: { confirm: "You sure?" },title: micropost.content %>
+	  <% end %>
+  </h3></barr>
+
+  <span style="position:absolute;">
+  <%= link_to micropost.user do %>
+  <barr style="position:absolute;margin-left:50px;width:108px;height:28px;text-align:center;"><h3><%= micropost.user.name %></h3></barr>
+  <% end %>
+  </span>	
+
+  <span id="vote_form"style="position:absolute;">
+	  <% if signed_in? %>
+	
+	  <% if current_user.voted_for?(micropost) %>
+	 	<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>✓</h3></barr>
+	  <% else %>
+		<%=  link_to(vote_up_micropost_path(micropost.id), :remote => true) do |f| %> 
+		<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>	
+		<% end %>
+	  <% end %>
+	
+	  <% else %>
+	  <barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>
+	  <% end %>
+  </span>
+
+
+
+
+
+
+
+<div class="modal hide" id="<%= micropost.id %>4" style="position:fixed;margin-left:-475px;height:90%;top:270px;width:940px;background-color:black;border: 9px solid white;">
+	
+
+  <div><%= image_tag micropost.image_url(:lmicropost) if micropost.image? %></div>
+  
+  <div class="linkl" style="width:680px;"><a href= <%= micropost.link %> ></a></div>
+  <div class="content" style="width:660px;"><%= micropost.content if micropost.content? %></div>
+
+<% micropost.tag_list.each do |tag_list| %>
+<%= link_to tagged_url(:tag => tag_list) do %>
+<div class="tag" style="display:block;background-color:white;position:relative;"><%= tag_list %></div>
+<% end %>
+<% end %>
+	
+	
+	<div style="position:absolute;top:0px;right:0px;height:auto;width:260px;background-color:black;">
+	<div style="position:absolute;top:0px;right:0px;">
+		<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag micropost.user.avatar_url(:avatar) if micropost.user.avatar? %></span>
+		<h1 style="color:white;position:absolute;right:4px;top:5px;"><%= micropost.user.name %></h1>
+		<h6 style="font-size:8px;color:#CC337A;float:right;right:1px;"><%= time_ago_in_words(micropost.created_at) %> ago </h6>
+		<tbar style="position:absolute;font-size:15px;color:white;float:right;right:4px;top:40px;">Plus:<%= micropost.votes_for %></tbar>
+	</div>
+	
+	<div style="position:absolute;top:60px;right:2px;width:254px;">
+	<%= form_for([micropost, @comment], :remote => true) do |f| %>
+	<span><%= f.text_area :body, class: "bar", style: "width:242px;height:50px;margin-bottom:0px;", :placeholder => "Your Views..." %></span>
+	<span><%= f.submit "Comment", class: "bar", style: "width:252px;height:30px;" %></span>
+	<% end %>
+	</div>
+	
+	<div id="<%=micropost.id%>" style="position:absolute;top:155px;right:0px;width:255px;">
+	    <%= render micropost.comments %>
+	</div>
+	</div>
+	
+
+
+</div>
+</div>
+
+
+
