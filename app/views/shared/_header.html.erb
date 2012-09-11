@@ -1,6 +1,7 @@
 <ar style="position:fixed;left:0px;top:0px;width:100%;height:55px;box-shadow: 0px 2px 2px 0px black;"></ar>
-<ar style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">	
-</ar>
+<bar data-toggle="modal" href="#entermodal" style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
+	<h1 style="margin-top:2px;font-size:22px;">F e m y n y n</h1>
+</bar>
 <div style="margin: 0px auto;width:960px;">
 <%= link_to tagged_url(:tag => "health") do %>
 <bar style="position:fixed;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">HEALTH</h5></bar>
@@ -11,11 +12,11 @@
 <%= link_to tagged_url(:tag => "fashion") do %>
 <bar style="position:fixed;margin-left:160px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">FASHION</h5></bar>
 <% end %>
-<%= link_to tagged_url(:tag => "accesory") do %>
-<bar style="position:fixed;margin-left:240px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">ACCESORIES</h5></bar>
-<% end %>
 <%= link_to tagged_url(:tag => "living") do %>
-<bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">LIVING</h5></bar>
+<bar style="position:fixed;margin-left:240px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">LIVING</h5></bar>
+<% end %>
+<%= link_to tagged_url(:tag => "marriage") do %>
+<bar style="position:fixed;margin-left:320px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MARRIAGE</h5></bar>
 <% end %>
 <bar style="position:fixed;margin-left:400px;top:0px;width:160px;height:56px;z-index:900;box-shadow: 0px 3px 3px 0px black;">
 
@@ -24,14 +25,14 @@
 	  <% end %>
 
 </bar>
-<%= link_to tagged_url(:tag => "marriage") do %>
-<bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MARRIAGE</h5></bar>
-<% end %>
 <%= link_to tagged_url(:tag => "mums") do %>
-<bar style="position:fixed;margin-left:640px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MUMS</h5></bar>
+<bar style="position:fixed;margin-left:560px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MUMS</h5></bar>
 <% end %>
-<%= link_to tagged_url(:tag => "gossip") do %>
-<bar style="position:fixed;margin-left:720px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">GOSSIP</h5></bar>
+<%= link_to tagged_url(:tag => "music") do %>
+<bar style="position:fixed;margin-left:640px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">MUSIC</h5></bar>
+<% end %>
+<%= link_to tagged_url(:tag => "enews") do %>
+<bar style="position:fixed;margin-left:720px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">ENEWS</h5></bar>
 <% end %>
 <%= link_to tagged_url(:tag => "recipes") do %>
 <bar style="position:fixed;margin-left:800px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">RECIPES</h5></bar>
@@ -59,9 +60,8 @@
 <div style="right:0px;position:fixed;margin-left:720px;top:96px;width:240px;height:100%;background:#76284D;z-index:-10;"></div>	
 
 <div style="margin: 0px auto;width:960px;">
-<bar data-toggle="modal" href="#entermodal" style="border:0px;position:fixed;bottom:0px;margin-left:400px;height:41px;">
-<img src="/assets/logo.png" alt="rss feed" />
-</bar>
+
+
 <% if signed_in? %>
 <%= link_to users_path do %><bar style="z-index:999;position:fixed;bottom:0px;right:0px;width:106px;height:40px;">
 	<img src="/assets/search.png" alt="rss feed" style="opacity:0.7;margin-top:10px;width:20px;height:20px;"/>
