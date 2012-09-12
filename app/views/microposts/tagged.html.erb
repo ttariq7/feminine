@@ -22,3 +22,15 @@
 
    <% end %>
 </aside>
+
+<script type="text/javascript">
+$(window).load(function(){
+var $container = $('#container');
+$container.imagesLoaded(function(){
+  $container.masonry({
+    itemSelector : '.item',
+    columnWidth : 240
+  });
+});
+});
+</script>

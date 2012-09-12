@@ -272,6 +272,10 @@ font-weight:bold;
   font-size:12px;
 }
 
+.question img {
+
+}
+
 .question:hover {
   opacity:1;
 font-weight:bold;
