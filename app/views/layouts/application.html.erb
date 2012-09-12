@@ -11,6 +11,7 @@
 
   <%= csrf_meta_tags %>
 
+
 <script type="text/javascript">
   $('document').ready(function(){
     $('div.linkl').embedly({
@@ -33,31 +34,6 @@
    	  chars: 100,
     });
   });
-</script>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-    var $secondary = $('#secondary');
-
-    $secondary.infinitescroll({
-        debug           : false,
-        nextSelector    : "div.navigation a:first",
-        loadingImg      : "/js/ajax-loader.gif",
-        navSelector     : "div.navigation",
-        contentSelector : "#secondary",
-        itemSelector    : "div.item"
-        },function(newElements) {
-            Cufon.refresh();
-            setTimeout(function() {
-
-                $secondary.masonry({
-                    appendedContent: $(newElements)
-                });
-
-            }, 1);
-
-    });
-});
 </script>
 
 

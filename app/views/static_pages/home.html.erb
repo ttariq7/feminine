@@ -1,3 +1,5 @@
+
+
 <%= render 'shared/header' %>
 <div><%= render 'shared/trendusers' %></div>
 
@@ -34,21 +36,22 @@
 
 
 
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
-$(function(){
-  $('#container').masonry({
-
+$(window).load(function(){
+var $container = $('#container');
+$container.imagesLoaded(function(){
+  $container.masonry({
     itemSelector : '.item',
     columnWidth : 240
   });
 });
+});
 </script>
+
+
+
+
+
+
+
+
