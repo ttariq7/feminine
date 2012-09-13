@@ -24,7 +24,7 @@
 		<div style="color:black;font-size:13px;"><%= micropost.content %></div>
 		<span style="font-weight:bold;font-size:10px;font-weight:normal;float:right;"><%= time_ago_in_words(micropost.created_at) %> ago </span>
 
-	  <div style="float:right;padding-right:15px;"><%= image_tag micropost.image_url(:micropost) if micropost.image? %></div>
+	  <div style="float:right;padding-right:15px;padding-bottom:15px;"><%= image_tag micropost.image_url(:micropost) if micropost.image? %></div>
 	  <div class="link"><a href= <%= micropost.link %> ></a></div>
 	</div>
 </div>

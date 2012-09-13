@@ -76,7 +76,7 @@ aside {
 
 square {
 	background:#953361;
-	border: 1px solid #620631;
+	border: 1px solid #12000b;
 }
 square:hover {
 	background:#620631;
@@ -84,20 +84,20 @@ square:hover {
 
 ar {
 	z-index:100;
-	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -moz-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -webkit-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -ms-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
 
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
-		color-stop(0.22, rgb(89,5,44)),
-		color-stop(1, rgb(226,30,122))
+		color-stop(0, rgb(0,0,0)),
+		color-stop(0.63, rgb(46,40,45))
 	);
-	border: 1px solid #620631;
+	border: 1px solid #12000b;
 }
 
 .css1 { font-size: 1.0em; }
@@ -108,20 +108,20 @@ ar {
 .bar {
 	cursor: pointer;cursor: hand;
 	z-index:100;
-	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -moz-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -webkit-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -ms-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
 
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
-		color-stop(0.22, rgb(89,5,44)),
-		color-stop(1, rgb(226,30,122))
+		color-stop(0, rgb(0,0,0)),
+		color-stop(0.63, rgb(46,40,45))
 	);
-	border: 1px solid #620631;
+	border: 1px solid #12000b;
 	font-size:18px;color:white;text-align:center;font-family: "bankg";
 
 }
@@ -134,20 +134,20 @@ ar {
 tbar {
 	cursor: pointer;cursor: hand;
 	z-index:100;
-	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -moz-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -webkit-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -ms-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
 
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
-		color-stop(0.22, rgb(89,5,44)),
-		color-stop(1, rgb(226,30,122))
+		color-stop(0, rgb(0,0,0)),
+		color-stop(0.63, rgb(46,40,45))
 	);
-	border: 1px solid #620631;
+	border: 1px solid #12000b;
 	font-size:17px;color:white;text-align:center;font-family: "bankg";
 	display: table;
 }
@@ -170,20 +170,20 @@ tbar:hover {
 bar {
 	cursor: pointer;cursor: hand;
 	z-index:100;
-	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -moz-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -webkit-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -ms-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
 
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
-		color-stop(0.22, rgb(89,5,44)),
-		color-stop(1, rgb(226,30,122))
+		color-stop(0, rgb(0,0,0)),
+		color-stop(0.63, rgb(46,40,45))
 	);
-	border: 1px solid #620631;
+	border: 1px solid #12000b;
 	font-size:18px;color:white;text-align:center;font-family: "bankg";
 }
 
@@ -193,18 +193,18 @@ bar p {
 
 barr {
 	cursor: pointer;cursor: hand;
-	background-image: linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -o-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -moz-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -webkit-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
-	background-image: -ms-linear-gradient(bottom, rgb(89,5,44) 22%, rgb(226,30,122) 100%);
+	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
 
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
-		color-stop(0.22, rgb(89,5,44)),
-		color-stop(1, rgb(226,30,122))
+		color-stop(0, rgb(0,0,0)),
+		color-stop(0.63, rgb(46,40,45))
 	);
 	
 }
@@ -244,7 +244,7 @@ overflow-y: scroll;
   margin-bottom:35px;
   float:left;
   border: 5px solid #1D1D1D;
-  box-shadow: 0px 2px 2px 0px #E21E79;
+  box-shadow: 0px 2px 2px 0px #1f0013;
 }
 
 .item img{
@@ -300,7 +300,7 @@ font-weight:bold;
 }
 
 .tag {
-  color:#CC337A;
+  color:grey;
   padding:5px;
   margin: 5px;
   float:left;
@@ -309,7 +309,7 @@ font-weight:bold;
 }
 
 .tag:hover {
-  color:#CC337A;
+  color:#8a0053;
   padding:5px;
   margin: 5px;
   float:left;
@@ -470,7 +470,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #999999;
-  background-color: #1D1D1D;
+  background-color: white;
 }
 a {
   color: #0071BC;
@@ -711,7 +711,7 @@ h6 small {
 h1 {
   font-size: 30px;
   line-height: 36px;
-  color:#CC337A;
+  color:grey;
   font-family: "bankg";
 }
 h1 small {
@@ -721,7 +721,7 @@ h1 small {
 h2 {
   font-size: 24px;
   line-height: 36px;
-  color:#CC337A;
+  color:grey;
 }
 h2 small {
   font-size: 18px;
@@ -730,7 +730,7 @@ h3 {
   font-size: 14px;
   line-height: 27px;
   font-weight:bold;
-  color:#CC337A;
+  color:grey;
   font-family: "bankg";
 }
 h3 small {
@@ -749,12 +749,12 @@ h4 small {
 }
 h5 {
   font-size: 9px;
-  color:#CC337A;
+  color:grey;
   font-family:"bankg";
 }
 h6 {
   font-size: 11px;
-  color: #adafae;
+  color: grey;
   text-transform: uppercase;
 }
 .page-header {

@@ -1,6 +1,6 @@
 <ar style="position:fixed;left:0px;top:0px;width:100%;height:55px;box-shadow: 0px 2px 2px 0px black;"></ar>
 <bar data-toggle="modal" href="#entermodal" style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
-	<h1 style="margin-top:2px;font-size:22px;">F e m y n y n</h1>
+	<h1 style="margin-top:2px;font-size:22px;color:grey">F e m y n y n</h1>
 </bar>
 <div style="margin: 0px auto;width:960px;">
 <%= link_to tagged_url(:tag => "health") do %>
@@ -56,8 +56,20 @@
 </bar1><% end %>
 </div>
 
-<tbar style="z-index:60;right:-2px;position:fixed;margin-left:880px;top:55px;width:240px;height:40px;box-shadow: 0px 2px 2px 0px black;"><p style="color:#CC337A;">?</p></tbar>
-<div style="right:0px;position:fixed;margin-left:720px;top:96px;width:240px;height:100%;background:#76284D;z-index:-10;"></div>	
+<tbar style="z-index:60;right:-2px;position:fixed;margin-left:880px;top:55px;width:240px;height:40px;box-shadow: 0px 2px 2px 0px black;"><p style="color:grey;">?</p></tbar>
+<div style="right:0px;position:fixed;margin-left:720px;top:96px;width:240px;height:100%;background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(0,0,0)),
+	color-stop(0.63, rgb(46,40,45))
+);z-index:-10;"></div>	
 
 <div style="margin: 0px auto;width:960px;">
 
