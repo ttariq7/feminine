@@ -4,19 +4,50 @@
 
 <% if signed_in? %>
 
+
+<%= form_tag users_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<ul>
+  <% @users.each do |user| %>
+<li><%= link_to user.name, 
+  :action => 'show', :id => user.id  %></li>
+<% end %>
+</ul>
+
+
+
 <div style="margin-right:240px;">
 <% @user ||= current_user %>
 <% @users.each do |user| %>
   <div class="dir" style="z-index:50;">
   <%= link_to user do %>
 
-        
+        <span style="text-align:center;position:absolute;opacity:0.5;"><%= image_tag user.avatar_url(:lavatar) if user.avatar? %></span>
+
 		<span style="text-align:center;position:absolute;margin-top:10px;margin-left:8px;">
 	    <h1 style="color:white;"><%= user.name %></h1>
 	  	</span>
 
-	
-	<%= link_to "X", user, method: :delete, data: { confirm: "You sure?" },title: user.name %>
+	    <span style="text-align:center;position:absolute;margin-top:165px;margin-left:3px;">
+		<%= render 'follow_form' if signed_in? %>
+	  	</span>
+
+		<span href="<%= following_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:5px;margin-top:140px;">
+	    <h1 id="following" class="stat" style="color:white;"><%= user.followed_users.count %></h1><h5 style="color:white;">following</h5>
+	  	</span>
+
+	    <span style="text-align:center;position:absolute;margin-top:140px;margin-left:68px;">
+	    <h1 style="color:white;"><%= user.microposts.count %></h1><h5 style="color:white;">posts</h5>
+	  	</span>
+
+	    <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:140px;margin-left:120px;">
+	    <h1 id="followers" class="stat" style="color:white;"><%= user.followers.count %></h1><h5 style="color:white;">followers</h5>
+	  	</span>	
 
   <% end %>
   </div>
