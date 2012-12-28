@@ -25,15 +25,15 @@
   	</span>
 
 	<a href="<%= following_user_path(@user) %>" style="text-align:center;position:absolute;margin-left:5px;margin-top:110px;">
-    <h1 id="following" class="stat" style="color:white;"><%= @user.followed_users.count %></h1><h5 style="color:white;">following</h5>
+    <h1 id="following" class="stat" style="color:white;"><%= @user.followed_users.count %></h1><h5 style="font-size:9px;color:white;">following</h5>
   	</a>
 
 
     <span style="text-align:center;position:absolute;margin-top:110px;margin-left:68px;">
-    <h1 style="color:white;"><%= @user.microposts.count %></h1><h5 style="color:white;">posts</h5>
+    <h1 style="color:white;"><%= @user.microposts.count %></h1><h5 style="font-size:9px;color:white;">posts</h5>
   	</span>
 
     <a href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:110px;margin-left:120px;">
-    <h1 id="followers" class="stat" style="color:white;"><%= @user.followers.count %></h1><h5 style="color:white;">followers</h5>
+    <h1 id="followers" class="stat" style="color:white;"><%= @user.followers.count %></h1><h5 style="font-size:9px;color:white;">followers</h5>
   	</a>	
 </ar>

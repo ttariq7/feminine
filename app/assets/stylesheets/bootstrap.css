@@ -265,7 +265,7 @@ overflow-y: scroll;
 .question {
   opacity:0.5;
 font-weight:bold;
-  background:white;
+  background:#ECECEC;
   width: 240px;
   margin-bottom:10px;
   float:left;
@@ -279,7 +279,7 @@ font-weight:bold;
 .question:hover {
   opacity:1;
 font-weight:bold;
-  background:white;
+  background:#ECECEC;
   width: 240px;
 
   margin-bottom:10px;
@@ -289,11 +289,11 @@ font-weight:bold;
 
 .comments {
 
-  background:white;
+  background:#ECECEC;
   width: 250px;
   margin-bottom: 3px;
   float:left;
-  color:black;
+  color:grey;
   font-size:12px;
   font-weight:bold;
 
@@ -319,8 +319,8 @@ font-weight:bold;
 
 .content {
 
-	background:white;
-	color:black;
+	background:#ECECEC;
+	color:grey;
 	font-size:16px;
 	font-weight:bold;
 	text-align:center;
@@ -329,8 +329,8 @@ font-weight:bold;
 
 .link {
 
-	background:white;
-	color:black;
+	background:#ECECEC;
+	color:grey;
 	font-size:12px;
 	display:block;
 	text-align:center;
@@ -351,8 +351,8 @@ font-weight:bold;
 
 .linkl {
 
-	background:white;
-	color:black;
+	background:#ECECEC;
+	color:grey;
 	font-size:15px;
 	text-align:center;
 
@@ -748,7 +748,7 @@ h4 small {
   font-size: 12px;
 }
 h5 {
-  font-size: 9px;
+  font-size: 11px;
   color:grey;
   font-family:"bankg";
 }

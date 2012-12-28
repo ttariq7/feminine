@@ -17,7 +17,7 @@ class MicropostsController < ApplicationController
 
   def show
     
-     @micropost = Micropost.find(params[:id])
+     @micropost = Micropost.find(params[:id]).paginate(:page => params[:page], :per_page => 3)
   +  @comments = @micropost.comments.all
 
      respond_to do |format|
