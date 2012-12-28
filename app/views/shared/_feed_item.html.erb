@@ -13,7 +13,7 @@
 
   <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>
 	  <% if current_user?(feed_item.user) %>
-	    <%= link_to "+", feed_item, method: :delete, data: { confirm: "You sure?" },title: feed_item.content %>
+	    <%= link_to "X", feed_item, method: :delete, data: { confirm: "DELETE POST?" },title: feed_item.content %>
 	  <% end %>
   </h3></barr>
 
