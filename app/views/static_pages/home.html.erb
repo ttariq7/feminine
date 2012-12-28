@@ -1,4 +1,4 @@
-
+<% if signed_in? %>
 
 <%= render 'shared/header' %>
 <div><%= render 'shared/trendusers' %></div>
@@ -7,11 +7,6 @@
 <div id="container" style="margin-top:490px;margin-right:240px;left:1%;display:block;">
    <%= render Micropost.all  %>
 </div>
-
-
-
-
-
 
 <aside style="position:absolute;margin-top:10px;">
 
@@ -33,7 +28,19 @@
    <% end %>
 </aside>
 
+<% else %>
 
+<div style="margin: 0px auto;width:980px;">
+
+	<bar data-toggle="modal" href="#entermodal" style="position:fixed;left:0px;bottom:0px;width:100%;height:40px;">
+		<h1 style="margin-top:2px;font-size:22px;color:grey">F e m y n y n</h1>
+	</bar>
+
+
+
+</div>
+
+<% end %>
 
 
 <script type="text/javascript">
