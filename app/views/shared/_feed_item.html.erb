@@ -14,6 +14,8 @@
   <barr style="position:absolute;width:50px;height:28px;text-align:center;"><h3>
 	  <% if current_user?(feed_item.user) %>
 	    <%= link_to "X", feed_item, method: :delete, data: { confirm: "DELETE POST?" },title: feed_item.content %>
+		  <% else %>
+		<%= feed_item.votes_for %>
 	  <% end %>
   </h3></barr>
 
@@ -28,7 +30,7 @@
 	 	<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>✓</h3></barr>
 	  <% else %>
 		<%=  link_to(vote_up_micropost_path(feed_item.id), :remote => true) do |f| %> 
-		<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>+</h3></barr>	
+		<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>Like</h3></barr>	
 		<% end %>
 	  <% end %>
   </span>
@@ -59,7 +61,7 @@
 		<span style="color:white;position:absolute;right:256px;top:5px;"><%= image_tag feed_item.user.avatar_url(:avatar) if feed_item.user.avatar? %></span>
 		<h1 style="color:white;position:absolute;right:4px;top:5px;"><%= feed_item.user.name %></h1>
 		<h6 style="font-size:8px;color:#CC337A;float:right;right:1px;"><%= time_ago_in_words(feed_item.created_at) %> ago </h6>
-		<tbar style="position:absolute;font-size:15px;color:white;float:right;right:4px;top:40px;">Plus:<%= feed_item.votes_for %></tbar>
+		<tbar style="position:absolute;font-size:15px;color:white;float:right;right:4px;top:40px;">Likes:<%= feed_item.votes_for %></tbar>
 	</div>
 	
 	<div style="position:absolute;top:60px;right:2px;width:254px;">
