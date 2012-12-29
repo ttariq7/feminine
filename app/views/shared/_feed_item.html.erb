@@ -30,7 +30,7 @@
 	 	<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>✓</h3></barr>
 	  <% else %>
 		<%=  link_to(vote_up_micropost_path(feed_item.id), :remote => true) do |f| %> 
-		<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3>Like</h3></barr>	
+		<barr style="position:absolute;margin-left:158px;width:50px;height:28px;text-align:center;"><h3 style="font-size:11px;">Like</h3></barr>	
 		<% end %>
 	  <% end %>
   </span>
