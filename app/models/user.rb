@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   mount_uploader :image2, ImageUploader
   mount_uploader :image3, ImageUploader
   
-  attr_accessible :name, :email, :password, :password_confirmation, :image, :avatar, :image2, :image3
+  attr_accessible :name, :email, :password, :password_confirmation, :image, :avatar, :image2, :image3, :school, :schoolyear
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy

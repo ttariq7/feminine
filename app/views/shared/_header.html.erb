@@ -41,20 +41,7 @@
 <bar style="position:fixed;margin-left:880px;top:0px;width:80px;height:55px;"><h5 style="margin-top:20px;">WTF</h5></bar>
 <% end %>
 </div>
-<div style="margin: 0px auto;width:960px;">
-<%= link_to root_path do %><bar style="z-index:90;position:fixed;margin-left:322px;top:55px;width:106px;height:40px;">
-	<img src="/assets/globe.png" alt="rss feed" style="opacity:0.3;margin-top:10px;width:20px;height:20px;"/>
-	<h5 style="margin-top:-5px;">Home</h5>
-</bar1><% end %>
-<%= link_to '/feed' do %><bar style="z-index:90;position:fixed;margin-left:428px;top:55px;width:106px;height:40px;">
-	<img src="/assets/user_group.png" alt="rss feed" style="opacity:0.3;margin-top:10px;width:30px;height:20px;"/>
-	<h5 style="margin-top:-5px;">Feed</h5>
-</bar1><% end %>
-<%= link_to current_user do %><bar style="z-index:90;position:fixed;margin-left:534px;top:55px;width:105px;height:40px;">
-	<img src="/assets/user.png" alt="rss feed" style="opacity:0.3;color:black;margin-top:10px;width:20px;height:20px;"/>
-	<h5 style="margin-top:-5px;">Profile</h5>
-</bar1><% end %>
-</div>
+
 
 <tbar style="z-index:60;right:0px;position:fixed;margin-left:880px;top:55px;width:240px;height:40px;box-shadow: 0px 2px 2px 0px black;"><p style="color:grey;">?</p></tbar>
 <div style="right:0px;position:fixed;margin-left:720px;top:96px;width:240px;height:100%;background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
@@ -77,12 +64,50 @@ background-image: -webkit-gradient(
 <%= link_to users_path do %><bar style="z-index:999;position:fixed;bottom:0px;right:0px;width:106px;height:40px;">
 	<img src="/assets/search.png" alt="rss feed" style="opacity:0.7;margin-top:10px;width:20px;height:20px;"/>
 	<h5 style="margin-top:-5px;">Search</h5>
-</bar1><% end %>
+</bar><% end %>
 
-<%= link_to signout_path, method: "delete" do %><bar style="z-index:999;position:fixed;bottom:0px;left:0px;width:106px;height:40px;">
-	
-	<h5 style="margin-top:25px;">Leave Slough</h5>
-</bar1><% end %>
+<bar href="#" class="btn-slide1" style="z-index:999;position:fixed;bottom:0px;left:0px;width:106px;height:40px;">
+	<h5 style="margin-top:25px;">MENU</h5>
+</bar>
 <% end %>
 
+<div style="position:fixed;z-index:99999;" id="panel1">
+	
+	
+	<%= link_to root_path do %>
+	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p>Slough</p></bar2>
+	<% end %>
+	
+	<%= link_to '/feed' do %>
+	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p>Following</p></bar2>
+	<% end %>
+	
+	<%= link_to tagged_url(:tag => current_user.school) do %>
+	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p><%= h truncate(current_user.school, :length => 25) %></p></bar2>
+	<% end %>
+	
+	<%= link_to tagged_url(:tag => current_user.schoolyear) do %>
+	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p><%= raw h truncate(current_user.schoolyear, :length => 23) %></p></bar2>
+	<% end %>
+	
+	<%= link_to current_user do %>
+	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p>Profile</p></bar2>
+	<% end %>
+	
+	<%= link_to signout_path, method: "delete" do %>
+	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p>Sign Out</p></bar2>
+	<% end %>
+	
+	
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".btn-slide1").click(function(){
+		$("#panel1").slideToggle("medium");
+		$(this).toggleClass("active1"); return false;
+	});
+
+
+});
+</script>

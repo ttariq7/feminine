@@ -25,58 +25,59 @@
 	<tbar style="position:absolute;margin-left:50px;top:430px;width:120px;height:42px;z-index:60;"><o>Avatar 3</o></tbar>
 	<span style="position:absolute;margin-left:168px;top:430px;"><%= f.file_field :image3, class: "bar", style: "width:378px;height:40px;" %></span>
 
-	<tbar style="position:absolute;margin-left:50px;top:500px;width:120px;height:42px;z-index:60;"><o>Password</o></tbar>
-	<span style="position:absolute;margin-left:168px;top:501px;"><%= f.password_field :password, style: "width:370px;height:30px;" %></span>
-	
-	<tbar style="position:absolute;margin-left:50px;top:570px;width:120px;height:42px;z-index:60;"><o>Confirm Password</o></tbar>
-	<span style="position:absolute;margin-left:168px;top:571px;"><%= f.password_field :password_confirmation, style: "width:370px;height:30px;" %></span>
 
-	<span style="position:absolute;margin-left:50px;top:640px;"><%= f.submit "Update", class: "bar", style: "width:500px;height:42px;" %></span>
+	<tbar style="position:absolute;margin-left:50px;top:500px;width:120px;height:42px;z-index:60;"><o>School</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:501px;"><%= f.text_field :school,id: "school", style: "width:370px;height:30px;" %></span>
+	
+	<tbar style="position:absolute;margin-left:50px;top:570px;width:120px;height:42px;z-index:60;"><o>Year</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:571px;"><%= f.text_field :schoolyear,id: "year", style: "width:370px;height:30px;" %></span>
+	
+	
+	<tbar style="position:absolute;margin-left:50px;top:640px;width:120px;height:42px;z-index:60;"><o>Password</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:640px;"><%= f.password_field :password, style: "width:370px;height:30px;" %></span>
+	
+	<tbar style="position:absolute;margin-left:50px;top:710px;width:120px;height:42px;z-index:60;"><o>Confirm Password</o></tbar>
+	<span style="position:absolute;margin-left:168px;top:710px;"><%= f.password_field :password_confirmation, style: "width:370px;height:30px;" %></span>
+
+	<span style="position:absolute;margin-left:50px;top:780px;"><%= f.submit "Update", class: "bar", style: "width:500px;height:42px;" %></span>
 
 
     <% end %>
 
-    <span style="position:absolute;margin-left:50px;top:720px;"><%= link_to 'Destroy', current_user, method: :delete, data: { confirm: 'Are you sure?' }  %></span>
+    <span style="position:absolute;margin-left:50px;top:900px;"><%= link_to 'Destroy', current_user, method: :delete, data: { confirm: 'Are you sure?' }  %></span>
   </div>
 </div>
 </div>
 
 
 
+
 <script>
 $(function() {
-	var availableUnis = [
-        "University of Kent"
+	var availableSchools = [
+		"Slough Grammar School",
+    	"Wexham High School",
+    	"Burnham Grammar School",
+    	"Herschel Grammar School",
+    	"Westgate School",
+    	"Langley Academy",
+    	"East Berkshire College",
+        "Langley Grammar School"
     ];
-    $( "#university" ).autocomplete({
-        source: availableTags
+    $( "#school" ).autocomplete({
+        source: availableSchools
     });
-    var availableCourses = [
-        "ActionScript",
-        "AppleScript",
-        "Asp",
-        "BASIC",
-        "C",
-        "C++",
-        "Clojure",
-        "COBOL",
-        "ColdFusion",
-        "Erlang",
-        "Fortran",
-        "Groovy",
-        "Haskell",
-        "Java",
-        "JavaScript",
-        "Lisp",
-        "Perl",
-        "PHP",
-        "Python",
-        "Ruby",
-        "Scala",
-        "Scheme"
+    var availableYears = [
+        "Year 7",
+        "Year 8",
+        "Year 9",
+        "Year 10",
+        "Year 11",
+        "Year 12",
+        "Year 13"
     ];
-    $( "#course" ).autocomplete({
-        source: availableCourses
+    $( "#year" ).autocomplete({
+        source: availableYears
     });
 });
 </script>

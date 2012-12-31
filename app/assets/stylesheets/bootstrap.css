@@ -16,7 +16,29 @@
 	url("/assets/bankg.ttf") format("truetype");
 	}
 	
-	
+	#panel1 {
+
+		position:absolute;
+		left:5px;
+		bottom:50px;
+		height: 300px;
+		display: none;
+		width:200px;
+		background:black;
+		-moz-box-shadow:  0 0 1px 1px #1d1d1d  ;
+		-webkit-box-shadow:  0 0 1px 1px #1d1d1d  ;
+		box-shadow:  0 0 1px 1px #1d1d1d  ;
+	}
+
+	.btn-slide1 {
+
+	}
+	.btn-slide1:hover {
+	background:#1d1d1d;
+	}
+	.active1 {
+	background:#1d1d1d;
+	}
 	
 	
 
@@ -165,6 +187,36 @@ tbar:hover {
 	cursor: hand;
 }
 
+bar2 {
+
+	color:grey;
+	text-align:center;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	display: table;
+	cursor: pointer;cursor: hand;
+	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(0,0,0)),
+		color-stop(0.63, rgb(46,40,45))
+	);
+	font-weight: bold;
+	z-index:99999999;
+	opacity:0.9;
+}
+
+bar2:hover {
+	cursor: pointer;cursor: hand;
+	color:grey;
+	background:#1d1d1d;
+}
 
 
 bar {
@@ -191,6 +243,10 @@ bar p {
 	vertical-align:middle;display:table-cell;
 }
 
+bar2 p {
+	vertical-align:middle;display:table-cell;
+}
+
 barr {
 	cursor: pointer;cursor: hand;
 	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
@@ -211,7 +267,7 @@ barr {
 
 barr:hover {
 	cursor: pointer;cursor: hand;	
-	background:#59052C;
+	background:#1d1d1d;
 }
 
 bar1 {
@@ -222,18 +278,20 @@ bar1 {
 }
 
 bar1:hover {
-	background:#76284D;
+	background:#1d1d1d;
 	cursor: pointer;cursor: hand;
+	color:black;
 }
 
 bar:hover {
-	background:#59052C;
+	background:#1d1d1d;
 	cursor: hand;
 }
 
 body {
   padding-top: 100px;
 overflow-y: scroll;
+background:white;
 }
 
 .item {
