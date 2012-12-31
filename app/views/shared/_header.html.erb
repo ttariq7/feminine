@@ -65,6 +65,14 @@
 	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p>Following</p></bar2>
 	<% end %>
 	
+	<%= link_to current_user do %>
+	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p>Profile</p></bar2>
+	<% end %>
+	
+	<%= link_to tagged_url(:tag => current_user.name) do %>
+	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p>My Wall</p></bar2>
+	<% end %>
+	
 	<%= link_to tagged_url(:tag => current_user.school) do %>
 	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p><%= h truncate(current_user.school, :length => 25) %></p></bar2>
 	<% end %>
@@ -73,10 +81,6 @@
 	
 	<%= link_to tagged_url(:tag => @year) do %>
 	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p><%= raw h truncate(current_user.schoolyear, :length => 23) %></p></bar2>
-	<% end %>
-	
-	<%= link_to current_user do %>
-	<bar2 style="top:0px;width:200px;height:50px;border-bottom:1px solid #1d1d1d;"><p>Profile</p></bar2>
 	<% end %>
 	
 	<%= link_to signout_path, method: "delete" do %>
