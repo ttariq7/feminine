@@ -194,6 +194,16 @@ bar2 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	display: table;
 	cursor: pointer;cursor: hand;
+	background:#1d1d1d;
+	font-weight: bold;
+	z-index:99999999;
+	opacity:0.9;
+}
+
+bar2:hover {
+	cursor: pointer;cursor: hand;
+	color:grey;
+	
 	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
 	background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
 	background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(46,40,45) 63%);
@@ -207,15 +217,6 @@ bar2 {
 		color-stop(0, rgb(0,0,0)),
 		color-stop(0.63, rgb(46,40,45))
 	);
-	font-weight: bold;
-	z-index:99999999;
-	opacity:0.9;
-}
-
-bar2:hover {
-	cursor: pointer;cursor: hand;
-	color:grey;
-	background:#1d1d1d;
 }
 
 
