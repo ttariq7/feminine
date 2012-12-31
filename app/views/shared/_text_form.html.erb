@@ -3,7 +3,7 @@
 <tbar style="position:fixed;width:600px;height:42px;"><p>Text</p></tbar>
 
 <tbar style="position:fixed;margin-left:50px;top:230px;width:120px;height:102px;"><p>Description</p></tbar>
-<span style="position:fixed;margin-left:168px;top:231px;"><%= f.text_field :content, style: "width:370px;height:91px;" %></span>
+<span style="position:fixed;margin-left:168px;top:231px;"><%= f.text_area :content, :rows => 5 , style: "width:370px;height:91px;" %></span>
 
 <tbar style="position:fixed;margin-left:50px;top:350px;width:120px;height:42px;"><p>Tags</p></tbar>
 <span style="position:fixed;margin-left:168px;top:351px;"><%= f.text_field :tag_list, style: "width:370px;height:30px;" %></span>
