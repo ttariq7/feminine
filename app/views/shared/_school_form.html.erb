@@ -3,14 +3,15 @@
 <tbar style="position:fixed;width:600px;height:42px;"><p><%= current_user.school %></p></tbar>
 
 
-<tbar style="position:fixed;margin-left:50px;top:230px;width:120px;height:42px;"><p>Link</p></tbar>
-<span style="position:fixed;margin-left:168px;top:231px;"><%= f.text_field :link, style: "width:370px;height:30px;" %></span>
+<tbar style="position:fixed;margin-left:50px;top:230px;width:120px;height:42px;"><p>Image</p></tbar>
+<span style="position:fixed;margin-left:168px;top:230px;"><%= f.file_field :image, class: "bar", style: "width:377px;height:40px;" %></span>
 
-<tbar style="position:fixed;margin-left:50px;top:290px;width:120px;height:102px;"><p>Description</p></tbar>
-<span style="position:fixed;margin-left:168px;top:291px;"><%= f.text_field :content, style: "width:370px;height:91px;" %></span>
+<tbar style="position:fixed;margin-left:50px;top:290px;width:120px;height:42px;"><p>Link</p></tbar>
+<span style="position:fixed;margin-left:168px;top:291px;"><%= f.text_field :link, style: "width:370px;height:30px;" %></span>
 
-><%= f.hidden_field :tag_list, :value => current_user.school %>
+<tbar style="position:fixed;margin-left:50px;top:350px;width:120px;height:102px;"><p>Description</p></tbar>
+<span style="position:fixed;margin-left:168px;top:351px;"><%= f.text_field :content, style: "width:370px;height:91px;" %></span>
 
-<span style="position:fixed;margin-left:50px;top:390px;"><%= f.submit "Post", class: "bar", style: "width:500px;height:42px;" %></span>
-
+<span style="position:fixed;margin-left:50px;top:490px;"><%= f.submit "Post", class: "bar", style: "width:500px;height:42px;" %></span>
+<%= f.hidden_field :tag_list, :value => current_user.school %>
 <% end %>
