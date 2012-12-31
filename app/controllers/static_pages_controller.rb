@@ -6,8 +6,8 @@ class StaticPagesController < ApplicationController
     end
     @microposts = Micropost.all
     @comment = Comment.new
-    @tag_counts = Micropost.tag_counts_on(:tags).order('count desc').limit(15)
-    @users = User.order("RANDOM()").limit(6)
+    @tag_counts = Micropost.tag_counts_on(:tags).order('count desc').limit(19)
+    @users = User.order("RANDOM()").limit(8)
   end
   
   def feed

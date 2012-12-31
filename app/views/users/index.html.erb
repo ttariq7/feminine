@@ -1,6 +1,6 @@
 <%= render 'shared/header' %>
 
-<h1>Members Club</h1>
+<h1>Members</h1>
 
 <% if signed_in? %>
 
@@ -31,7 +31,7 @@
 	    <h1 style="color:white;"><%= user.microposts.count %></h1><h5 style="color:white;">posts</h5>
 	  	</span>
 
-	    <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:140px;margin-left:120px;">
+	    <span href="<%= followers_user_path(@user) %>" style="text-align:center;position:absolute;margin-top:140px;margin-left:112px;">
 	    <h1 id="followers" class="stat" style="color:white;"><%= user.followers.count %></h1><h5 style="color:white;">followers</h5>
 	  	</span>	
 

@@ -317,7 +317,7 @@ background:white;
   margin-bottom:20px;
   float:left;
   border: 1px solid #1D1D1D;
-  box-shadow: 0px 2px 2px 0px #E21E79;
+  box-shadow: 0px 2px 2px 0px #1d1d1d;
 }
 
 .question {
@@ -378,7 +378,7 @@ font-weight:bold;
 .content {
 
 	background:#ECECEC;
-	color:grey;
+	color:#1d1d1d;
 	font-size:16px;
 	font-weight:bold;
 	text-align:center;
