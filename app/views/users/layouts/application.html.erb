@@ -1,3 +1,25 @@
 <div id="search">
   <%= render :partial => 'users/search' %>
 </div>
+
+
+
+<aside style="position:absolute;margin-top:10px;">
+
+   <% @microposts.where(kyahai: "3").each do |micropost| %>
+	
+	<div style=""class="question" >
+	<div data-toggle="modal" href="#<%= micropost.id %>4" style="cursor:pointer;cursor:hand;" >
+		<span style="color:white;top:5px;float:left;margin:2px;"><%= image_tag micropost.user.avatar_url(:avatar) if 			micropost.user.avatar? %></span>
+		<span><h5 style="font-size:15px;"><%= micropost.user.name %>:</h5> </span>
+		<div style="color:black;font-size:13px;"><%= micropost.content %></div>
+		<span style="font-weight:bold;font-size:10px;font-weight:normal;float:right;"><%= time_ago_in_words(micropost.created_at) %> ago </span>
+
+	  <div style="padding-left:15px;"><%= image_tag micropost.image_url(:micropost) if micropost.image? %></div>
+	  <div class="link"><a href= <%= micropost.link %> ></a></div>
+	</div>
+	</div>
+
+		
+   <% end %>
+</aside>

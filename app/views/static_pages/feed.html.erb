@@ -2,13 +2,9 @@
 
 	
 <% if signed_in? %>
-<div id="container" style="margin-right:240px;left:1%;display:block;">
+<div id="container" style="margin: 0 auto;margin-top:70px;left:10px;margin-bottom:200px;">
    <%= render 'shared/feed' %>
 </div>
-
-<aside style="position:absolute;">
-   <%= render 'shared/feedq' %>
-</aside>
 <% end %>
 
 
@@ -23,6 +19,7 @@ $(window).load(function(){
 var $container = $('#container');
 $container.imagesLoaded(function(){
   $container.masonry({
+		isFitWidth: true,
     itemSelector : '.item',
     columnWidth : 240
   });

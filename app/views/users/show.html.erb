@@ -5,7 +5,7 @@
 <% if signed_in? %>
 
 <section>
-<div class="modal hide" id="entermodal" style="width:400px;height:300px;background-color:#953361;"><%= render 'shared/micropost_form' %></div>
+<div class="modal hide" id="entermodal" style="width:600px;height:300px;background-color:#953361;"><%= render 'shared/micropost_form' %></div>
 <div class="modal hide" id="link" style="width:600px;height:500px;background-color:black;"><%= render 'shared/link_form' %></div>
 <div class="modal hide" id="text" style="width:600px;height:500px;background-color:black;"><%= render 'shared/text_form' %></div>
 <div class="modal hide" id="video" style="width:600px;height:500px;background-color:black;"><%= render 'shared/video_form' %></div>
@@ -20,29 +20,9 @@
 
 <% if @user.microposts.any? %>
 
-<div style="margin-top:450px;margin-right:240px;left:1%;display:block;" id="container">
+<div id="container" style="margin: 0 auto;margin-top:450px;left:10px;margin-bottom:200px;">
   <%= render @microposts %>
 </div>
-
-<aside style="position:absolute;margin-top:10px;">
-
-   <% @microposts.where(kyahai: "3").each do |micropost| %>
-	
-	<div style=""class="question" >
-	<div data-toggle="modal" href="#<%= micropost.id %>4" style="cursor:pointer;cursor:hand;" >
-		<span style="color:white;top:5px;float:left;margin:2px;"><%= image_tag micropost.user.avatar_url(:avatar) if 			micropost.user.avatar? %></span>
-		<span><h5 style="font-size:15px;"><%= micropost.user.name %>:</h5> </span>
-		<div style="color:black;font-size:13px;"><%= micropost.content %></div>
-		<span style="font-weight:bold;font-size:10px;font-weight:normal;float:right;"><%= time_ago_in_words(micropost.created_at) %> ago </span>
-
-	  <div style="padding-left:15px;"><%= image_tag micropost.image_url(:micropost) if micropost.image? %></div>
-	  <div class="link"><a href= <%= micropost.link %> ></a></div>
-	</div>
-	</div>
-
-		
-   <% end %>
-</aside>
 
 
 
@@ -61,6 +41,7 @@ $(window).load(function(){
 var $container = $('#container');
 $container.imagesLoaded(function(){
   $container.masonry({
+	isFitWidth: true,
     itemSelector : '.item',
     columnWidth : 240
   });
