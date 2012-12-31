@@ -6,6 +6,9 @@
   <div class="">
 	<%= form_for @user, :html => {:multipart => true} do |f| %>
 	
+
+	
+	
 	
 	<tbar style="position:absolute;margin-left:50px;top:150px;width:120px;height:42px;z-index:60;"><o>Email</o></tbar>
 	<span style="position:absolute;margin-left:168px;top:151px;"><%= f.text_field :email, style: "width:370px;height:30px;" %></span>
@@ -37,3 +40,43 @@
   </div>
 </div>
 </div>
+
+
+
+<script>
+$(function() {
+	var availableUnis = [
+        "University of Kent"
+    ];
+    $( "#university" ).autocomplete({
+        source: availableTags
+    });
+    var availableCourses = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+    ];
+    $( "#course" ).autocomplete({
+        source: availableCourses
+    });
+});
+</script>

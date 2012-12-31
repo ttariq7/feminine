@@ -1,5 +1,6 @@
 <%= render 'shared/header' %>
 
+
 <% @micropost  = current_user.microposts.build if signed_in? %>
 <% if signed_in? %>
 
@@ -15,12 +16,7 @@
 
 
 <%= render 'profile' %>
-<% form_tag users_path, :method => 'get' do %>
-  <div style="position:fixed;top:500px;left:100px;">
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </div>
-<% end %>
+
 
 <% if @user.microposts.any? %>
 

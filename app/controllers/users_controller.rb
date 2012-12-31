@@ -3,7 +3,6 @@ class UsersController < ApplicationController
                 only: [:index, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_user,   only: [:edit, :update]  
 
-
   def index
 
     @users = User.all
