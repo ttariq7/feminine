@@ -96,13 +96,7 @@ aside {
 	max-width:240px;
 }
 
-square {
-	background:#953361;
-	border: 1px solid #12000b;
-}
-square:hover {
-	background:#1d1d1d;
-}
+
 
 ar {
 	z-index:100;
@@ -119,7 +113,7 @@ ar {
 		color-stop(0, rgb(0,0,0)),
 		color-stop(0.63, rgb(46,40,45))
 	);
-	border: 1px solid #12000b;
+
 }
 
 .css1 { font-size: 1.0em; }
@@ -143,7 +137,8 @@ ar {
 		color-stop(0, rgb(0,0,0)),
 		color-stop(0.63, rgb(46,40,45))
 	);
-	border: 1px solid #12000b;
+	border:1px solid black;
+
 	font-size:18px;color:white;text-align:center;font-family: "bankg";
 
 }
@@ -169,7 +164,7 @@ tbar {
 		color-stop(0, rgb(0,0,0)),
 		color-stop(0.63, rgb(46,40,45))
 	);
-	border: 1px solid #12000b;
+
 	font-size:17px;color:white;text-align:center;font-family: "bankg";
 	display: table;
 }
@@ -236,7 +231,7 @@ bar {
 		color-stop(0, rgb(0,0,0)),
 		color-stop(0.63, rgb(46,40,45))
 	);
-	border: 1px solid #12000b;
+	border:0px solid black;
 	font-size:18px;color:white;text-align:center;font-family: "bankg";
 }
 
@@ -273,7 +268,7 @@ barr:hover {
 
 bar1 {
  	cursor: pointer;cursor: hand;
-	background:#953361;
+
 	z-index:99;
 
 }
