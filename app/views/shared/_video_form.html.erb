@@ -3,16 +3,16 @@
 <tbar style="position:fixed;width:600px;height:42px;#cfcfcf;font-size:18px;"><p>Slough</p></tbar>
 
 
-<span style="position:fixed;margin-left:48px;top:231px;"><%= f.text_field :tag_list, placeholder: "e.g. omg, lol, james786", style: "width:490px;height:30px;color:#cfcfcf;font-size:18px;" %></span>
+<span style="position:fixed;margin-left:48px;top:231px;"><%= f.text_field :tag_list, placeholder: "tags e.g. omg, lol, james786", style: "width:490px;height:30px;color:#cfcfcf;font-size:18px;border:1px solid black;" %></span>
 
 <tbar style="position:fixed;margin-left:50px;top:170px;width:120px;height:42px;"><p>Image</p></tbar>
 <span style="position:fixed;margin-left:168px;top:169px;"><%= f.file_field :image, class: "bar", style: "width:377px;height:40px;" %></span>
 
 
-<span style="position:fixed;margin-left:48px;top:291px;"><%= f.text_field :link, placeholder: "http://" ,style: "color:#cfcfcf;font-size:18px;width:490px;height:30px;" %></span>
+<span style="position:fixed;margin-left:48px;top:291px;"><%= f.text_field :link, placeholder: "http://" ,style: "color:#cfcfcf;font-size:18px;width:490px;height:30px;border:1px solid black;" %></span>
 
 
-<span style="position:fixed;margin-left:48px;top:356px;"><%= f.text_area :content, placeholder: "What's happening in Slough?", :rows => 5 , style: "width:490px;height:89px;color:#cfcfcf;font-size:18px;" %></span>
+<span style="position:fixed;margin-left:48px;top:356px;"><%= f.text_area :content, placeholder: "What's happening in Slough?", :rows => 5 , style: "width:490px;height:89px;color:#cfcfcf;font-size:18px;border:1px solid black;" %></span>
 
 <span style="position:fixed;margin-left:50px;top:490px;"><%= f.submit "Post", class: "bar", style: "width:500px;height:42px;" %></span>
 
