@@ -41,9 +41,10 @@ bar {
 }
 
 body {
+	background-color: #cfcfcf;
   padding-top: 60px;
 overflow-y: scroll;
-background-color: white;
+
 }
 
 .item {
